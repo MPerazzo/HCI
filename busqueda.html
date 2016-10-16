@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>FlySafely</title>
+
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="css/materialize.min.css">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.min.js"></script>
+      <script>
+      	$(document).ready(function(){
+      		$('select').material_select();
+			$('.autocomplete').autocomplete({
+				data: {
+				"Apple": null,
+				"Microsoft": null,
+				"Google": null
+				}
+			});
+			$('.datepicker').pickadate({
+				selectMonths: true, // Creates a dropdown to control month
+				selectYears: 15 // Creates a dropdown of 15 years to control year
+			});
+      	});
+      </script>
+
+      <style type="text/css">
+      	#buscar{
+      		background-color: #eeeeee;
+      		margin-bottom: 4em;
+      		padding-left: 2em;
+      		margin-top: 0em;
+      		padding-top: 0em;
+      		margin-left: 0em;
+
+      	}
+      	#buscarTitle{
+      		background-color: #eeeeee;
+      		color: #009688;
+      		margin-bottom: 0em;
+      		padding-bottom: 0em;
+      		margin-top: 12em;
+      		padding-left: 2em;
+      		width: 16%;
+      		margin-left: 0em;
+      	}
+      </style> 
+
+   	</body>   
+   	</head>
+
+   	<body style="margin:0; padding=0">
+
+   		<div class="container" >
+   		   	<div class="row"  id="buscarTitle">
+   				<div class="col">
+   					<p><i class="small material-icons left">flight_takeoff</i> WHERE TO GO</p>
+   				</div>
+   			</div>
+   			<div id="buscar">
+   			<div class="row">
+   				<form class="col s12">
+   					<div class="row">
+   						<div class="input-field col s5 m2 l2">
+   							<input type="text" id="from" class="autocomplete">
+   							<label for="from">from</label>
+   						</div>
+   						<div class="col">
+   							<br/>
+							<p><i class="small material-icons">swap_horiz</i></p>
+   						</div>
+   						<div class="input-field col s5 m2 l2">
+   							<input type="text" id="to" class="autocomplete">
+   							<label for="to">to</label>
+   						</div>
+   						<div class="col s2 m2 l2">
+   							<label>dapart</label>
+   							<input type="date" class="datepicker">
+   						</div>
+   						<div class="col s2 m2 l2">
+   							<label>return</label>
+   							<input type="date" class="datepicker">
+   						</div>
+   						<div class="col s6 m3 l3">
+   							<br/>
+   							<br/>
+   							<input name="group1" type="radio" id="roundTrip"/>
+   							<label for="roundTrip">Round trip</label>
+   							<input name="group1" type="radio" id="oneWay" />
+   							<label for="oneWay">One way</label>
+   						</div>
+   					</div>
+   				</form>
+   			</div>
+   			<div class="row">
+   				<a href="">add another destination</a>
+   				<br/>
+   				<br/>
+   			</div>
+   			<div class="row">
+   				<div class="input-field col s2">
+   					<select name="" id="">
+   						<option value="1">1</option>
+   						<option value="2">2</option>
+   						<option value="3">3</option>
+   					</select>
+   					<label>adult</label>
+   				</div>
+   				<div class="input-field col s2 offset-s1">
+   					<select name="" id="">
+   						<option value="1">1</option>
+   						<option value="2">2</option>
+   						<option value="3">3</option>
+   					</select>
+   					<label>child</label>
+   				</div>
+   				<div class="input-field col s2 offset-s1">
+   					<select name="" id="">
+   						<option value="1">1</option>
+   						<option value="2">2</option>
+   						<option value="3">3</option>
+   					</select>
+   					<label>infant</label>
+   				</div>
+   				<div class="col s2 offset-s1">
+   					<br/>
+   					<button class="btn waves-effect waves-light right" type="submit" name="action">Seach
+   						<i class="material-icons right">navigate_next</i>
+   					</button>
+   				</div>
+   			</div>
+   			</div>
+   		</div>
+
+   	</body>
+
+</html>
