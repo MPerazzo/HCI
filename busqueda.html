@@ -20,8 +20,8 @@
 				}
 			});
 			$('.datepicker').pickadate({
-				selectMonths: true, // Creates a dropdown to control month
-				selectYears: 15 // Creates a dropdown of 15 years to control year
+				selectMonths: true, 
+				selectYears: 15
 			});
       	});
       </script>
@@ -31,6 +31,7 @@
       		background-color: #eeeeee;
       		margin-bottom: 4em;
       		padding-left: 2em;
+            padding-right: 1em;
       		margin-top: 0em;
       		padding-top: 0em;
       		margin-left: 0em;
@@ -43,8 +44,8 @@
       		padding-bottom: 0em;
       		margin-top: 12em;
       		padding-left: 2em;
-      		width: 16%;
       		margin-left: 0em;
+            width: 30%;
       	}
       </style> 
 
@@ -53,17 +54,17 @@
 
    	<body style="margin:0; padding=0">
 
-   		<div class="container" >
-   		   	<div class="row"  id="buscarTitle">
+   		<div class="container">
+   		   <div class="row"  id="buscarTitle">
    				<div class="col">
-   					<p><i class="small material-icons left">flight_takeoff</i> WHERE TO GO</p>
+   					<p><i class="small material-icons left";">flight_takeoff</i> WHERE TO GO</p>
    				</div>
    			</div>
    			<div id="buscar">
    			<div class="row">
    				<form class="col s12">
    					<div class="row">
-   						<div class="input-field col s5 m2 l2">
+   						<div class="input-field col s5 m5 l2">
    							<input type="text" id="from" class="autocomplete">
    							<label for="from">from</label>
    						</div>
@@ -71,20 +72,19 @@
    							<br/>
 							<p><i class="small material-icons">swap_horiz</i></p>
    						</div>
-   						<div class="input-field col s5 m2 l2">
+   						<div class="input-field col s5 m5 l2">
    							<input type="text" id="to" class="autocomplete">
    							<label for="to">to</label>
    						</div>
-   						<div class="col s2 m2 l2">
-   							<label>dapart</label>
+   						<div class="col s6 m7 l2">
+                        <label>Depart</label>
    							<input type="date" class="datepicker">
    						</div>
-   						<div class="col s2 m2 l2">
-   							<label>return</label>
+   						<div class="col s6 m5 l2">
+                        <label>Return</label>
    							<input type="date" class="datepicker">
    						</div>
-   						<div class="col s6 m3 l3">
-   							<br/>
+   						<div class="col s6 m6 l3">
    							<br/>
    							<input name="group1" type="radio" id="roundTrip"/>
    							<label for="roundTrip">Round trip</label>
@@ -100,7 +100,7 @@
    				<br/>
    			</div>
    			<div class="row">
-   				<div class="input-field col s2">
+   				<div class="input-field col s2 m2 l2">
    					<select name="" id="">
    						<option value="1">1</option>
    						<option value="2">2</option>
@@ -108,7 +108,7 @@
    					</select>
    					<label>adult</label>
    				</div>
-   				<div class="input-field col s2 offset-s1">
+   				<div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1">
    					<select name="" id="">
    						<option value="1">1</option>
    						<option value="2">2</option>
@@ -116,7 +116,7 @@
    					</select>
    					<label>child</label>
    				</div>
-   				<div class="input-field col s2 offset-s1">
+   				<div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1">
    					<select name="" id="">
    						<option value="1">1</option>
    						<option value="2">2</option>
@@ -124,7 +124,7 @@
    					</select>
    					<label>infant</label>
    				</div>
-   				<div class="col s2 offset-s1">
+   				<div class="col s2 m2 l2 offset-s2 offset-m2 offset-l2">
    					<br/>
    					<button class="btn waves-effect waves-light right" type="submit" name="action">Seach
    						<i class="material-icons right">navigate_next</i>
