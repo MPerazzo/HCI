@@ -21,6 +21,45 @@
 		    margin-right: -50%;
 		    transform: translate(-50%, -50%);
 		}
+
+       	.crumbs { display: block; }
+		.crumbs li {  display: inline; }
+		.crumbs li.first { padding-left: 8px; }
+		.crumbs li a,
+		.crumbs li a:link,
+		.crumbs li a:visited {
+		  color: #666;
+		  display: block;
+		  float: left;
+		  font-size: 12px;
+		  margin-left: -13px;
+		  padding: 7px 17px 11px 25px;
+		  position: relative;
+		  text-decoration: none;
+		}
+		.crumbs li a {
+		  background-image: url('bg-crumbs.png');
+		  background-repeat: no-repeat;
+		  background-position: 100% 0;
+		  position: relative;
+		}
+		.crumbs li a:hover {
+		  color: #333;
+		  background-position: 100% -48px;
+		  cursor: pointer;
+		}
+		.crumbs li a:active {
+		  color: #333;
+		  background-position: 100% -96px;
+		}
+		.crumbs li.first a span {
+		  height: 29px;
+		  width: 3px;
+		  border-left: 1px solid #d9d9d9;
+		  position: absolute;
+		  top: 0px;
+		  left: 0px;
+		}
 		       
       </style>
 
@@ -56,5 +95,15 @@
    				    </div>
    			    </div>
    	        </div>
+   	        <div id="breadcrumb" style="margin-left:33vw; margin-right:33vw; position:relative; bottom:7.0vh">
+			  <ul class="crumbs">
+			    <li class="first"><a href="#" class="cyan-text" style="z-index:9; font-size:1.0vw"><span></span>Search</a></li>
+			    <li><a href="#" style="z-index:8; font-size:1.0vw;">Flights</a></li>
+			    <li><a href="#" style="z-index:7; font-size:1.0vw">Passengers</a></li>
+			    <li><a href="#" style="z-index:6; font-size:1.0vw">Payment</a></li>
+			    <li><a href="#" style="z-index:5; font-size:1.0vw">Confirmation</a></li>
+
+			  </ul>
+			</div>
     </body>   
 </html>
