@@ -9,20 +9,85 @@
 
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/busqueda.js"></script>
       <script>
       	$(document).ready(function(){
       		$('select').material_select();
-			$('.autocomplete').autocomplete({
-				data: {
-				"Apple": null,
-				"Microsoft": null,
-				"Google": null
-				}
-			});
-			$('.datepicker').pickadate({
-				selectMonths: true, 
-				selectYears: 15
-			});
+            $('.autocomplete').autocomplete({
+              data: {
+                 "Apple": null,
+                 "Microsoft": null,
+                 "Google": null
+              }
+           });
+            $('.datepicker').pickadate({
+              selectMonths: true, 
+              selectYears: 15
+           });
+
+            var roundTrip = document.getElementById("roundTrip");
+            roundTrip.checked = true;
+            document.getElementById("dest2").style.display = 'none';
+            document.getElementById("dest3").style.display = 'none';
+            document.getElementById("dest4").style.display = 'none';
+            document.getElementById("dest5").style.display = 'none';
+
+            roundTrip.onclick = function() {
+               document.getElementById("return").style.display = 'block';  
+            }
+
+            var oneWay = document.getElementById("oneWay");
+            oneWay.onclick = function() {
+               document.getElementById("return").style.display = 'none';  
+            }
+
+            var cantDest = 0;
+            var dest = document.getElementById("addDestination");
+            dest.onclick = function(){
+               if(cantDest == 0) {
+                  document.getElementById("return").style.display = 'none';  
+                  document.getElementById("way").style.display = 'none';
+               }
+               if(cantDest <= 3) {
+                  cantDest++;
+                  document.getElementById("dest" + (cantDest+1)).style.display = 'block';
+               }
+               if(cantDest > 1 || cantDest <3) {
+                  document.getElementById("rm" + (cantDest-1)).style.display = 'none';
+               }
+               if(cantDest == 4) {
+                  document.getElementById("addDestination").style.display = 'none';
+               }
+            }
+            var rm1 = document.getElementById("rm1");
+            rm1.onclick = function() {
+                  if(document.getElementById("roundTrip").checked) {
+                     document.getElementById("return").style.display = 'block';
+                  }
+                  document.getElementById("way").style.display = 'block';
+                  cantDest--;
+                  document.getElementById("dest2").style.display = 'none';
+            }
+            var rm2 = document.getElementById("rm2");
+            rm2.onclick = function() {
+                  document.getElementById("rm1").style.display = 'block';
+                  cantDest--;
+                  document.getElementById("dest3").style.display = 'none';
+
+            }
+            var rm3 = document.getElementById("rm3");
+            rm3.onclick = function() {
+                  document.getElementById("rm2").style.display = 'block';
+                  cantDest--;
+                  document.getElementById("dest4").style.display = 'none';
+            }
+            var rm4 = document.getElementById("rm4");
+            rm4.onclick = function() {
+                  document.getElementById("rm3").style.display = 'block';
+                  document.getElementById("dest5").style.display = 'none';
+                  document.getElementById("addDestination").style.display = 'block';
+                  cantDest--;
+            }
       	});
       </script>
 
@@ -55,84 +120,175 @@
    	<body style="margin:0; padding=0">
 
    		<div class="container">
-   		   <div class="row"  id="buscarTitle">
-   				<div class="col">
-   					<p><i class="small material-icons left";">flight_takeoff</i> WHERE TO GO</p>
-   				</div>
-   			</div>
-   			<div id="buscar">
-   			<div class="row">
-   				<form class="col s12">
-   					<div class="row">
-   						<div class="input-field col s5 m5 l2">
-   							<input type="text" id="from" class="autocomplete">
-   							<label for="from">from</label>
-   						</div>
-   						<div class="col">
-   							<br/>
-							<p><i class="small material-icons">swap_horiz</i></p>
-   						</div>
-   						<div class="input-field col s5 m5 l2">
-   							<input type="text" id="to" class="autocomplete">
-   							<label for="to">to</label>
-   						</div>
-   						<div class="col s6 m7 l2">
-                        <label>Depart</label>
-   							<input type="date" class="datepicker">
-   						</div>
-   						<div class="col s6 m5 l2">
-                        <label>Return</label>
-   							<input type="date" class="datepicker">
-   						</div>
-   						<div class="col s6 m6 l3">
-   							<br/>
-   							<input name="group1" type="radio" id="roundTrip"/>
-   							<label for="roundTrip">Round trip</label>
-   							<input name="group1" type="radio" id="oneWay" />
-   							<label for="oneWay">One way</label>
-   						</div>
-   					</div>
-   				</form>
-   			</div>
-   			<div class="row">
-   				<a href="">add another destination</a>
-   				<br/>
-   				<br/>
-   			</div>
-   			<div class="row">
-   				<div class="input-field col s2 m2 l2">
-   					<select name="" id="">
-   						<option value="1">1</option>
-   						<option value="2">2</option>
-   						<option value="3">3</option>
-   					</select>
-   					<label>adult</label>
-   				</div>
-   				<div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1">
-   					<select name="" id="">
-   						<option value="1">1</option>
-   						<option value="2">2</option>
-   						<option value="3">3</option>
-   					</select>
-   					<label>child</label>
-   				</div>
-   				<div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1">
-   					<select name="" id="">
-   						<option value="1">1</option>
-   						<option value="2">2</option>
-   						<option value="3">3</option>
-   					</select>
-   					<label>infant</label>
-   				</div>
-   				<div class="col s2 m2 l2 offset-s2 offset-m2 offset-l2">
-   					<br/>
-   					<button class="btn waves-effect waves-light right" type="submit" name="action">Seach
-   						<i class="material-icons right">navigate_next</i>
-   					</button>
-   				</div>
-   			</div>
-   			</div>
-   		</div>
+            <div class="row"  id="buscarTitle">
+               <div class="col">
+                  <p><i class="small material-icons left";">flight_takeoff</i> WHERE TO GO</p>
+               </div>
+            </div>
+            <div id="buscar">
+               <div class="row">
+                  <form class="col s12" id="busqueda">
+                     <div class="row" id="dest1">
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="from" class="autocomplete" name="from">
+                              <label for="from">from</label>
+                           </div>
+                           <div class="col">
+                              <br/>
+                              <p><i class="small material-icons">swap_horiz</i></p>
+                           </div>
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="to" class="autocomplete" name="to">
+                              <label for="to">to</label>
+                           </div>
+                           <div class="col s6 m7 l2" >
+                              <label>Depart</label>
+                              <input type="date" class="datepicker" name="depart">
+                           </div>
+                           <div class="col s6 m5 l2" id="return">
+                              <label >Return</label>
+                              <input type="date" class="datepicker" name="return">
+                           </div>
+                           <form action="#" name="ways">
+                              <div  class="col s6 m6 l3" id="way">
+                                 <br/>
+                                 <input name ="ways" type="radio" id="roundTrip" value="roundTrip"/>
+                                 <label for  ="roundTrip" >Round trip</label>
+                                 <input name ="ways" type="radio" id="oneWay" value="oneWay"/>
+                                 <label for  ="oneWay">One way</label>
+                              </div>
+                           </form>
+                     </div>
+                     <div class="row" id="dest2">
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="from" class="autocomplete" name="from">
+                              <label for="from">from</label>
+                           </div>
+                           <div class="col">
+                              <br/>
+                              <p><i class="small material-icons">swap_horiz</i></p>
+                           </div>
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="to" class="autocomplete" name="to">
+                              <label for="to">to</label>
+                           </div>
+                           <div class="col s6 m7 l2" >
+                              <label>Depart</label>
+                              <input type="date" class="datepicker" name="depart">
+                           </div>
+                           <div class="col s6 m5 l2" id="rm1">
+                              <br/>
+                              <a class="btn-flat">remove section</a>
+                           </div>
+                     </div>
+                     <div class="row" id="dest3">
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="from" class="autocomplete" name="from">
+                              <label for="from">from</label>
+                           </div>
+                           <div class="col">
+                              <br/>
+                              <p><i class="small material-icons">swap_horiz</i></p>
+                           </div>
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="to" class="autocomplete" name="to">
+                              <label for="to">to</label>
+                           </div>
+                           <div class="col s6 m7 l2" >
+                              <label>Depart</label>
+                              <input type="date" class="datepicker" name="depart">
+                           </div>
+                           <div class="col s6 m5 l2" id="rm2">
+                              <br/>
+                              <a class="btn-flat">remove section</a>
+                           </div>
+                     </div>
+                     <div class="row" id="dest4">
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="from" class="autocomplete" name="from">
+                              <label for="from">from</label>
+                           </div>
+                           <div class="col">
+                              <br/>
+                              <p><i class="small material-icons">swap_horiz</i></p>
+                           </div>
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="to" class="autocomplete" name="to">
+                              <label for="to">to</label>
+                           </div>
+                           <div class="col s6 m7 l2" >
+                              <label>Depart</label>
+                              <input type="date" class="datepicker" name="depart">
+                           </div>
+                           <div class="col s6 m5 l2" id="rm3">
+                              <br/>
+                              <a class="btn-flat">remove section</a>
+                           </div>                           
+                     </div>
+                     <div class="row" id="dest5">
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="from" class="autocomplete" name="from">
+                              <label for="from">from</label>
+                           </div>
+                           <div class="col">
+                              <br/>
+                              <p><i class="small material-icons">swap_horiz</i></p>
+                           </div>
+                           <div class="input-field col s5 m5 l2" >
+                              <input type="text" id="to" class="autocomplete" name="to">
+                              <label for="to">to</label>
+                           </div>
+                           <div class="col s6 m7 l2" >
+                              <label>Depart</label>
+                              <input type="date" class="datepicker" name="depart">
+                           </div>
+                           <div class="col s6 m5 l2" id="rm4">
+                              <br/>
+                              <a class="btn-flat">remove section</a>
+                           </div>                           
+                     </div>
+                     <div class="row" id="addDestination">
+                        <a class="btn-flat">add another destination</a>
+                        <br/>
+                        <br/>
+                     </div>
+                     <div class="row">
+                        <div class="input-field col s2 m2 l2">
+                           <select name="" id="">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                           </select>
+                           <label>adult</label>
+                        </div>
+                        <div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1">
+                           <select name="" id="">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                           </select>
+                           <label>child</label>
+                        </div>
+                        <div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1">
+                           <select name="" id="">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                           </select>
+                           <label>infant</label>
+                        </div>
+                        <div class="col s2 m2 l2 offset-s2 offset-m2 offset-l2">
+                           <br/>
+                           <button class="btn waves-effect waves-light right" type="submit" name="action">Seach
+                              <i class="material-icons right">navigate_next</i>
+                           </button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+
+            </div>
+         </div>
 
    	</body>
 
