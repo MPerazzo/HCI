@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>FlySafely</title>
+
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+	   <link rel="stylesheet" href="css/materialize.min.css">
+	   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.min.js"></script>
+      <script>
+         $(document).ready(function(){
+
+         });
+      </script>
+      <style type="text/css">
+         #search2{
+            background-color: #009688;
+            color: #009688;
+            padding-left: 2em;
+            padding-bottom: 2em;
+            height: 100px;
+         }
+         #search1{
+            background-color: #eeeeee;
+            padding-left: 2em;
+            padding-right: 0em;
+            padding-top: 0em;
+            padding-bottom: 0em;
+         }
+
+         .tabs .indicator {
+			 background-color: #A39898;
+		}
+
+		.rating {
+		  unicode-bidi: bidi-override;
+		  direction: rtl;
+		}
+		.rating > span {
+		  display: inline-block;
+		  position: relative;
+		  width: 1.1em;
+		}
+		.rating > span:hover:before,
+		.rating > span:hover ~ span:before {
+		   content: "\2605";
+		   position: absolute;
+		}
+
+      </style> 
+   </head>
+   <!-- HEADER -->
+   <body style="margin:0; margin-bottom:30px; padding=0">
+   		<div class=container4 style="position:relative">
+   		   <img src="header.jpg" style="width:100%; position:relative"/>
+   		   <div class="container">
+   			    <div class="row" style="display:flex; align-items: center; justify-content:center">	      
+   					<div class="col s2.5 m2.5 l2.5">
+   							<a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:4.4vw; 
+   							padding-right:4.4vw; bottom:8.5vh" href="http://www.tutorialspoint.com">
+               					<h5 class="valign black-text" style="font-size:1.0vw"> 
+ 									<i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">home</i>HOME</h5></a>
+   					</div>
+   					<div class="col s2.5 m2.5 l2.5">	       	 
+   							<a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:2.8vw; 
+   							padding-right:2.8vw; bottom:8.5vh" href="http://www.tutorialspoint.com">
+                        <h5 class="valign black-text" style="font-size:1.0vw"> 
+                  <i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">redeem</i>DISCOUNTS</h5></a>
+   					</div>
+   					<div class="col s2.5 m2.5 l2.5">	       	 
+   							      <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:3.5vw; 
+   							      padding-right:3.5vw; bottom:8.5vh" href="http://www.tutorialspoint.com">
+                        <h5 class="valign black-text" style="font-size:1.0vw"> 
+                  <i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">comment</i>REVIEWS</h5></a>
+   					</div>
+   					<div class="col s2.5 m2.5 l2.5">	       	 
+   						<a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:2.5vw; 
+   						padding-right:2.5vw; bottom:8.5vh" href="http://www.tutorialspoint.com">
+                        	<h5 class="valign black-text" style="font-size:1.0vw"> 
+                  				<i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">email</i>CONTACT US</h5></a>
+   				    </div>
+   			    </div>
+   	        </div>
+        </div>
+
+        <!-- SELECCIONADOR -->
+        <div class="container">
+	         <ul class="tabs grey lighten-3" style="bottom:7.0vh">
+	            <li class="tab col s3"><a class="active black-text" href="#searchreview" style="font-size:0.8vw">Search for flight reviews</a></li>
+	            <li class="tab col s3"><a class="black-text lighten-2" href="#makereview" style="font-size:0.8vw">
+	            Make your review<i class="material-icons small right" title="Choose and click one of these options. The first one let you search flight reviews and the other let you make flight reviews.">live_help</i></a></li> 
+	         </ul>
+        </div>
+
+        <!-- OPCION SEARCH-REVIEW -->
+        <div class="container" id="searchreview">
+	        <div class="row" id="search1">
+	            <form class="col s12" style="padding:0">             
+               	  <div class="input-field col s6 m4 l3" style="margin-top:5vh">
+                     <input id="airlane" type="text" placeholder="Write the airline here" class="validate">
+                     <label for="airlane" class="black-text" style="font-size:1.0vw">Airline</label>
+                  </div>
+                  <div class="input-field col s6 m4 l3 offset-s1 offset-l1" style="margin-top:5vh">
+                     <input id="flightNumber" type="text" placeholder="Write the flight number here" class="validate">
+                     <label for="flightNumber" class="black-text" style="font-size:1.0vw">Flight Number</label>
+                  </div>
+                  <div class="col s6 m4 l2 offset-s3 offset-l3 valign" id="search2" style="padding-top:10px; padding-right:10px; padding-bottom:50px; padding-left:10px">
+                     <br/>
+                     	<a class="waves-effect waves-light btn valign center" style="margin:0; height:6.0vh; width:10.0vw" href="http://www.tutorialspoint.com">
+                        	<h5 class="valign black-text" style="font-size:1.0vw">Search</h5></a>
+                     <br/>
+                  </div>              
+	            </form>
+	        </div>         
+        </div>
+
+        <!-- OPCION MAKE-REVIEW -->
+        <div class="container" id="makereview" style="margin-bottom:30px">
+	        <div class="row" id="search1" style="margin-bottom:30px">
+	            <form class="col s12" style="margin-top:3.0vh; margin-bottom:30px">
+	               <div class="row">
+	               	  <div class="input-field col s6 m4 l3">
+	                     <input id="airlane" type="text" placeholder="Write the airline here" class="validate">
+	                     <label for="airlane" class="black-text" style="font-size:1.0vw">Airline</label>
+	                  </div>
+	                  <div class="input-field col s6 m4 l3 offset-s1 offset-l1">
+	                     <input id="flightNumber" type="text" placeholder="Write the flight number here" class="validate">
+	                     <label for="flightNumber" class="black-text" style="font-size:1.0vw">Flight Number</label>
+	                  </div>
+	               </div>
+	               <div class="row" style="margin-top:2.5vh">
+	               		<div class="col s6 m4 l3">
+		               		<text class="black-text">Friendliness</text>
+		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               	</div>
+	               </div>
+ 				   <div class="row" style="margin-top:2.5vh">
+	               		<div class="col s6 m4 l3">
+		               		<text class="black-text">Food</text>
+		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               	</div>
+	               </div>
+
+	               <div class="row" style="margin-top:2.5vh">
+	               		<div class="col s6 m4 l3">
+		               		<text class="black-text">Punctuality</text>
+		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               	</div>
+	               </div>
+
+	               <div class="row" style="margin-top:2.5vh">
+	               		<div class="col s6 m4 l3">
+		               		<text class="black-text">Frequent flyer program</text>
+		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               	</div>
+	               </div>
+
+	               <div class="row" style="margin-top:2.5vh">
+	               		<div class="col s6 m4 l3">
+		               		<text class="black-text">Confort</text>
+		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               	</div>
+	               </div>
+
+	               <div class="row" style="margin-top:2.5vh">
+	               		<div class="col s6 m4 l3">
+		               		<text class="black-text">Price-Quality relation</text>
+		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
+		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               	</div>
+	               </div>
+
+	               <div class="row" style="margin-top:2.5vh; margin-bottom:0">
+	               		<div class="col s6 m4 l3">
+	               			<text class="black-text" style="font-size:20px">General Review</text>
+	               		</div>
+	               </div>
+
+	                <div class="row" style="margin-top:2.0vh; margin-bottom:5.5vh; padding-bottom:0">
+	               		<div class="input-field col s12 m12 l12">
+	               			<text class="black-text">Would you recommend it to a friend?
+		               			<p style="margin:0; padding:0">
+			                     <input id="yes" type="radio" name="recommendation" value="yes" checked>
+			                     <label for="yes">Yes</label>
+
+			                     <input id="no" type="radio" name="recommendation" value="no" checked>
+			                     <label for="no">No</label>
+			                   </p></text>
+	               		</div>
+	               </div>
+	               <form method="post" style="margin-top:400px">
+						<div>
+							<text class="black-text"> Comment: </text>
+							<textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
+							</textarea>
+						</div>
+						<a class="btn waves-effect waves-teal lighten-3" style="margin-top:20px; height:6.0vh; width:8.0vw; padding-left:2.0vw; padding-right:2.0vw" href="http://www.tutorialspoint.com">
+               					<h5 class="valign black-text" style="font-size:10px"> 
+ 									<i class="black-text material-icons tiny right" style="font-size:1vw; margin:0">send</i>SEND</h5></a>
+					</form>
+	            </form>
+	        </div>
+        </div>
+   </body>
+</html>
