@@ -39,6 +39,21 @@
       </script>
       <style type="text/css">
 
+        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color:    #9E9E9E;
+         }
+         :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    #9E9E9E;
+            opacity:  1;
+         }
+         ::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color:    #9E9E9E;
+          opacity:  1;
+       }
+       :-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color:    #9E9E9E;
+       }
+
 
       	div.container4 {
     		height: 1.52em;
@@ -78,6 +93,7 @@
 
    </head>
    <body style="margin:0; padding=0;">
+     <!--  HEADER -->
 	   <div class=container4 style="position:relative">
 		   <img src="header.jpg" style="width:100%; height:160px; position:relative"/>
 		   <div class="container">
@@ -112,7 +128,7 @@
   		</div>
 
   		<div class="container">
-	              	   	   
+	       <!-- CUADRO DE BUSQUEDA -->
   		   <div class="row"  id="buscarTitle">
                <div class="col">
                   <p><i class="small material-icons left">flight_takeoff</i> WHERE TO GO</p>
@@ -150,9 +166,9 @@
                            <div class="col s6 m6 l4" id="way">
                               <br/>
                               <input name ="ways" type="radio" id="roundTrip" value="roundTrip"/>
-                              <label for="roundTrip" style="padding-right:40px">Round trip</label>
+                              <label for="roundTrip" style="padding-right:40px; color:#424242">Round trip</label>
                               <input name="ways" type="radio" id="oneWay" value="oneWay"/>
-                              <label for="oneWay">One way</label>
+                              <label for="oneWay" style="color:#424242">One way</label>
                            </div>
                         </form>
                      </div>
