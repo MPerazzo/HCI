@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>FlySafely</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">      
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	  <link rel="stylesheet" href="css/materialize.min.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src="js/materialize.min.js"></script>
+      <script>
+      	$(document).ready(function(){
+      		$('select').material_select();
+            $('.autocomplete').autocomplete({
+              data: {
+                 "Apple": null,
+                 "Microsoft": null,
+                 "Google": null
+              }
+           });
+            $('.datepicker').pickadate({
+              selectMonths: true, 
+              selectYears: 15
+           });
+
+            var roundTrip = document.getElementById("roundTrip");
+            roundTrip.checked = true;
+
+            roundTrip.onclick = function() {
+               document.getElementById("return").style.display = 'block';  
+            }
+
+            var oneWay = document.getElementById("oneWay");
+            oneWay.onclick = function() {
+               document.getElementById("return").style.display = 'none';  
+            }
+
+            
+      	});
+      </script>
+      <style type="text/css">
+
+
+      	div.container4 {
+    		height: 1.52em;
+    		position: relative 
+        }
+   		div.container4 p {
+		    margin: 0;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    margin-right: -50%;
+		    transform: translate(-50%, -50%);
+		}
+
+			#buscar{
+      		background-color: #eeeeee;
+      		margin-bottom: 4em;
+      		padding-left: 2em;
+            padding-right: 1em;
+      		margin-top: 0em;
+      		padding-top: 0em;
+      		margin-left: 0em;
+
+      	}
+      	#buscarTitle{
+      		background-color: #eeeeee;
+      		color: #009688;
+      		margin-bottom: 0em;
+      		padding-bottom: 0em;
+      		margin-top: 12em;
+      		padding-left: 2em;
+      		margin-left: 0em;
+            width: 30%;
+      	}
+		       
+      </style>
+
+   </head>
+   <body style="margin:0; padding=0;">
+	   <div class=container4 style="position:relative">
+		   <img src="header.jpg" style="width:100%; height:160px; position:relative"/>
+		   <div class="container">
+			   <div class="row" style="display:flex; align-items: center; justify-content:center">	      
+					<div class="col s2.5 m2.5 l2.5">
+							<a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:4.4vw; 
+							padding-right:4.4vw; bottom:8.5vh" href="http://www.tutorialspoint.com">
+            				   <h5 class="valign black-text" style="font-size:1.0vw"> 
+								  <i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">home</i>HOME</h5></a>
+					</div>
+					<div class="col s2.5 m2.5 l2.5">	       	 
+						<a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:2.8vw; 
+							padding-right:2.8vw; bottom:8.5vh" href="http://www.tutorialspoint.com">
+                     			<h5 class="valign black-text" style="font-size:1.0vw"> 
+               						<i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">redeem</i>DISCOUNTS</h5></a>
+					</div>
+					<div class="col s2.5 m2.5 l2.5">	       	 
+				        <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:3.5vw; 
+					      padding-right:3.5vw; bottom:8.5vh" href="3-reviews.html">
+                     		<h5 class="valign black-text" style="font-size:1.0vw"> 
+               						<i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">subject</i>REVIEWS</h5></a>
+					</div>
+					<div class="col s2.5 m2.5 l2.5">	       	 
+						<a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:2.5vw; 
+						padding-right:2.5vw; bottom:8.5vh" href="http://www.tutorialspoint.com">
+                     		<h5 class="valign black-text" style="font-size:1.0vw"> 
+       			   			   <i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">email</i>CONTACT US</h5></a>
+				   </div>
+	            </div>
+           </div>
+      	   
+  		</div>
+
+  		<div class="container">
+	              	   	   
+  		   <div class="row"  id="buscarTitle">
+               <div class="col">
+                  <p><i class="small material-icons left">flight_takeoff</i> WHERE TO GO</p>
+               </div>
+            </div>
+            <div id="buscar" style="height:250px">
+               <div class="row" style="padding-top:20px">
+                  <form class="col s12" id="busqueda">
+                     <div class="row" id="dest" style="margin:0">
+                           <div class="input-field col s5 m5 l3" style="position:relative; bottom:20px" >
+                              <label for="airlane" class="black-text" style="font-size:16px; position:relative; bottom:40px; left:0;">From</label>
+                              <input id="airlane" type="text" placeholder="write starting airpot here" class="autocomplete">
+                           </div>
+                           <div class="col" style="position:relative; bottom:10px; right:3px">
+                              <br/>
+                              <p><i class="small material-icons">trending_flat</i></p>
+                           </div>
+                           <div class="input-field col s5 m5 l3" style="position:relative; bottom:20px" >
+                              <label for="airlane" class="black-text" style="font-size:16px; position:relative; bottom:40px; left:0;">To</label>
+                              <input id="airlane" type="text" placeholder="write destiny airpot here" class="autocomplete">
+                           </div>
+                           <div class="col s6 m7 l2" style="margin-left:20px">
+                              <label class="black-text" style="position:relative; top:7px; font-size: 16px">Departure Date</label>
+                              <input type="date" placeholder="click here" class="datepicker" name="depart" style="position:relative; bottom:5px">
+                              <i class="black-text material-icons tiny" style="margin:0; position:relative; bottom:57px; left:115px">today</i></input>
+                           </div>
+                           <div class="col s6 m5 l2" style="margin-left:30px" id="return">
+                              <label class="black-text" style="position:relative; top:7px; font-size: 16px">Arrival Date</label>
+                              <input type="date" placeholder="click here" class="datepicker" name="depart" style="position:relative; bottom:5px">
+                              <i class="black-text material-icons tiny" style="margin:0; position:relative; bottom:57px; left:115px">today</i></input>
+                           </div>
+                     </div>
+                     <div class="row" style="position:relative; bottom:40px; left:7px" >      
+                        <form action="#" name="ways">
+                           <div class="col s6 m6 l4" id="way">
+                              <br/>
+                              <input name ="ways" type="radio" id="roundTrip" value="roundTrip"/>
+                              <label for="roundTrip" style="padding-right:40px">Round trip</label>
+                              <input name="ways" type="radio" id="oneWay" value="oneWay"/>
+                              <label for="oneWay">One way</label>
+                           </div>
+                        </form>
+                     </div>
+                     </div>
+                     <div class="row" style="margin:0; padding:0; margin-left:10px; position:relative; bottom:60px; right:10px">
+                        <div class="input-field col s2 m2 l2">
+                           <select name="" id="">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                           </select>
+                           <label class="black-text" style="font-size:16px">Adult</label>
+                        </div>
+                        <div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1">
+                           <select name="" id="">
+                              <option value="1">0</option>
+                              <option value="2">1</option>
+                              <option value="3">2</option>
+                           </select>
+                           <label class="black-text" style="font-size:16px">Child</label>
+                        </div>
+                        <div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1" style="margin-right:5px">
+                           <select name="" id="">
+                              <option value="1">0</option>
+                              <option value="2">1</option>
+                              <option value="3">2</option>
+                           </select>
+                           <label class="black-text" style="font-size:16px">Infant</label>
+                        </div>
+                        <div class="col s2 m2 l2 offset-s1 offset-m1 offset-l1">
+                           <br/>
+                           <a class="btn waves-effect waves-light right" type="submit" href="http://www.asd.com" name="action">Search</a>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+
+            </div>
+  	    </div>
+   </body>   
+</html>
