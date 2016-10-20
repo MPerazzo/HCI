@@ -41,53 +41,7 @@
                document.getElementById("return").style.display = 'none';  
             }
 
-            var cantDest = 0;
-            var dest = document.getElementById("addDestination");
-            dest.onclick = function(){
-               if(cantDest == 0) {
-                  document.getElementById("return").style.display = 'none';  
-                  document.getElementById("way").style.display = 'none';
-               }
-               if(cantDest <= 3) {
-                  cantDest++;
-                  document.getElementById("dest" + (cantDest+1)).style.display = 'block';
-               }
-               if(cantDest > 1 || cantDest <3) {
-                  document.getElementById("rm" + (cantDest-1)).style.display = 'none';
-               }
-               if(cantDest == 4) {
-                  document.getElementById("addDestination").style.display = 'none';
-               }
-            }
-            var rm1 = document.getElementById("rm1");
-            rm1.onclick = function() {
-                  if(document.getElementById("roundTrip").checked) {
-                     document.getElementById("return").style.display = 'block';
-                  }
-                  document.getElementById("way").style.display = 'block';
-                  cantDest--;
-                  document.getElementById("dest2").style.display = 'none';
-            }
-            var rm2 = document.getElementById("rm2");
-            rm2.onclick = function() {
-                  document.getElementById("rm1").style.display = 'block';
-                  cantDest--;
-                  document.getElementById("dest3").style.display = 'none';
-
-            }
-            var rm3 = document.getElementById("rm3");
-            rm3.onclick = function() {
-                  document.getElementById("rm2").style.display = 'block';
-                  cantDest--;
-                  document.getElementById("dest4").style.display = 'none';
-            }
-            var rm4 = document.getElementById("rm4");
-            rm4.onclick = function() {
-                  document.getElementById("rm3").style.display = 'block';
-                  document.getElementById("dest5").style.display = 'none';
-                  document.getElementById("addDestination").style.display = 'block';
-                  cantDest--;
-            }
+            
       	});
       </script>
 
@@ -248,7 +202,8 @@
                            <div class="col s6 m5 l2" id="rm4">
                               <br/>
                               <a class="btn-flat">remove section</a>
-                           </div>                           
+                           </div> 
+                     </div>           
                      </div>
                      <div class="row" style="margin:0; padding:0; margin-left:10px; position:relative; bottom:40px">
                         <div class="input-field col s2 m2 l2">
