@@ -27,10 +27,6 @@
 
             var roundTrip = document.getElementById("roundTrip");
             roundTrip.checked = true;
-            document.getElementById("dest2").style.display = 'none';
-            document.getElementById("dest3").style.display = 'none';
-            document.getElementById("dest4").style.display = 'none';
-            document.getElementById("dest5").style.display = 'none';
 
             roundTrip.onclick = function() {
                document.getElementById("return").style.display = 'block';  
@@ -70,7 +66,7 @@
 
 </head>
 
-   	<body style="margin:0; padding=0; margin-bottom:800px">
+   	<body style="margin:0; padding=0; margin-bottom:400px">
 
    		<div class="container">
             <div class="row"  id="buscarTitle">
@@ -78,7 +74,7 @@
                   <p><i class="small material-icons left">flight_takeoff</i> WHERE TO GO</p>
                </div>
             </div>
-            <div id="buscar">
+            <div id="buscar" style="height:250px">
                <div class="row" style="padding-top:20px">
                   <form class="col s12" id="busqueda">
                      <div class="row" id="dest" style="margin:0">
@@ -116,96 +112,8 @@
                            </div>
                         </form>
                      </div>
-                     <div class="row" id="dest2">
-                           <div class="input-field col s5 m5 l2" >
-                              <input type="text" id="from" class="autocomplete" name="from">
-                              <label for="from">from</label>
-                           </div>
-                           <div class="col">
-                              <br/>
-                              <p><i class="small material-icons">swap_horiz</i></p>
-                           </div>
-                           <div class="input-field col s5 m5 l2" >
-                              <input type="text" id="to" class="autocomplete" name="to">
-                              <label for="to">to</label>
-                           </div>
-                           <div class="col s6 m7 l2" >
-                              <label>Depart</label>
-                              <input type="date" class="datepicker" name="depart">
-                           </div>
-                           <div class="col s6 m5 l2" id="rm1">
-                              <br/>
-                              <a class="btn-flat">remove section</a>
-                           </div>
                      </div>
-                     <div class="row" id="dest3">
-                           <div class="input-field col s5 m5 l2" >
-                              <input type="text" id="from" class="autocomplete" name="from">
-                              <label for="from">from</label>
-                           </div>
-                           <div class="col">
-                              <br/>
-                              <p><i class="small material-icons">swap_horiz</i></p>
-                           </div>
-                           <div class="input-field col s5 m5 l2" >
-                              <input type="text" id="to" class="autocomplete" name="to">
-                              <label for="to">to</label>
-                           </div>
-                           <div class="col s6 m7 l2" >
-                              <label>Depart</label>
-                              <input type="date" class="datepicker" name="depart">
-                           </div>
-                           <div class="col s6 m5 l2" id="rm2">
-                              <br/>
-                              <a class="btn-flat">remove section</a>
-                           </div>
-                     </div>
-                     <div class="row" id="dest4">
-                           <div class="input-field col s5 m5 l2" >
-                              <input type="text" id="from" class="autocomplete" name="from">
-                              <label for="from">from</label>
-                           </div>
-                           <div class="col">
-                              <br/>
-                              <p><i class="small material-icons">swap_horiz</i></p>
-                           </div>
-                           <div class="input-field col s5 m5 l2" >
-                              <input type="text" id="to" class="autocomplete" name="to">
-                              <label for="to">to</label>
-                           </div>
-                           <div class="col s6 m7 l2" >
-                              <label>Depart</label>
-                              <input type="date" class="datepicker" name="depart">
-                           </div>
-                           <div class="col s6 m5 l2" id="rm3">
-                              <br/>
-                              <a class="btn-flat">remove section</a>
-                           </div>                           
-                     </div>
-                     <div class="row" id="dest5">
-                           <div class="input-field col s5 m5 l2" >
-                              <input type="text" id="from" class="autocomplete" name="from">
-                              <label for="from">from</label>
-                           </div>
-                           <div class="col">
-                              <br/>
-                              <p><i class="small material-icons">swap_horiz</i></p>
-                           </div>
-                           <div class="input-field col s5 m5 l2" >
-                              <input type="text" id="to" class="autocomplete" name="to">
-                              <label for="to">to</label>
-                           </div>
-                           <div class="col s6 m7 l2" >
-                              <label>Depart</label>
-                              <input type="date" class="datepicker" name="depart">
-                           </div>
-                           <div class="col s6 m5 l2" id="rm4">
-                              <br/>
-                              <a class="btn-flat">remove section</a>
-                           </div> 
-                     </div>           
-                     </div>
-                     <div class="row" style="margin:0; padding:0; margin-left:10px; position:relative; bottom:40px">
+                     <div class="row" style="margin:0; padding:0; margin-left:10px; position:relative; bottom:60px; right:10px">
                         <div class="input-field col s2 m2 l2">
                            <select name="" id="">
                               <option value="1">1</option>
@@ -222,7 +130,7 @@
                            </select>
                            <label class="black-text" style="font-size:16px">Child</label>
                         </div>
-                        <div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1">
+                        <div class="input-field col s2 m2 l2 offset-s1 offset-m1 offset-l1" style="margin-right:5px">
                            <select name="" id="">
                               <option value="1">0</option>
                               <option value="2">1</option>
