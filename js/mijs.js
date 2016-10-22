@@ -8,8 +8,12 @@ $(document).ready(function(){
         }
      });
       $('.datepicker').pickadate({
+        min:new Date('today'),
         selectMonths: true, 
-        selectYears: 15
+        selectYears: 5,
+        onClose: function() {
+          $(document.activeElement).blur();
+        }
 
      });
 
