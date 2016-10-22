@@ -6,138 +6,11 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="css/materialize.min.css">
+      <link rel="stylesheet" href="css/micss.css">
+
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
       <script src="js/materialize.min.js"></script>
-      <script type="text/javascript" src="js/busqueda.js"></script>
-      <script>
-        $(document).ready(function(){
-          $('select').material_select();
-            $('.autocomplete').autocomplete({
-              data: {
-                 "Apple": null,
-                 "Microsoft": null,
-                 "Google": null
-              }
-           });
-            $('.datepicker').pickadate({
-              selectMonths: true, 
-              selectYears: 15
-           });
-
-            var roundTrip = document.getElementById("roundTrip");
-            roundTrip.checked = true;
-
-            roundTrip.onclick = function() {
-               document.getElementById("return").style.display = 'block';  
-            }
-
-            var oneWay = document.getElementById("oneWay");
-            oneWay.onclick = function() {
-               document.getElementById("return").style.display = 'none';  
-            }
-
-            
-        });
-      </script>
- 
-      <style type="text/css">
-
-      text {
-        font-family: "Wildest";
-      }
-
-      ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-         color:    #9E9E9E;
-      }
-      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-         color:    #9E9E9E;
-         opacity:  1;
-      }
-      ::-moz-placeholder { /* Mozilla Firefox 19+ */
-         color:    #9E9E9E;
-         opacity:  1;
-      }
-      :-ms-input-placeholder { /* Internet Explorer 10-11 */
-         color:    #9E9E9E;
-      }
-
-      .up{
-          margin-top: 0em;
-          margin-bottom: -6em;
-      }
-      a{
-        color:inherit;
-        text-decoration: none;
-      }
-      .margen{
-        margin-top: -1em;
-        
-      }
-
-      #buscar{
-          background-color: #eeeeee;
-          margin-bottom: 4em;
-          padding-left: 2em;
-            padding-right: 1em;
-          margin-top: 0em;
-          padding-top: 0em;
-          margin-left: 0em;
-
-        }
-
-         div.container4 {
-         height: 1.52em;
-         position: relative 
-        }
-         div.container4 p {
-          margin: 0;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          margin-right: -50%;
-          transform: translate(-50%, -50%);
-      }
-
-      .crumbs { display: block; }
-      .crumbs li {  display: inline; }
-      .crumbs li.first { padding-left: 8px; }
-      .crumbs li a,
-      .crumbs li a:link,
-      .crumbs li a:visited {
-        color: #666;
-        display: block;
-        float: left;
-        font-size: 12px;
-        margin-left: -13px;
-        padding: 7px 17px 11px 25px;
-        position: relative;
-        text-decoration: none;
-      }
-      .crumbs li a {
-        background-image: url('bg-crumbs.png');
-        background-repeat: no-repeat;
-        background-position: 100% 0;
-        position: relative;
-      }
-      .crumbs li a:hover {
-        color: #333;
-        background-position: 100% -48px;
-        cursor: pointer;
-      }
-      .crumbs li a:active {
-        color: #333;
-        background-position: 100% -96px;
-      }
-      .crumbs li.first a span {
-        height: 29px;
-        width: 3px;
-        border-left: 1px solid #d9d9d9;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-      }
-             
-      </style>
+      <script src="js/mijs.js"></script>
 
    </head>
    <body style="margin:0; padding=0; margin-bottom:900px">
@@ -181,13 +54,14 @@
                 <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:3.5vw; 
                 padding-right:3.5vw; bottom:8.5vh" href="3-reviews.html">
                     <text class="black-text" style="font-size:1.0vw"> 
-                       <i class="black-text fa fa-pencil-square-o tiny left" style="position:relative; left:4px font-size:1.5vw; margin:0"></i>REVIEWS</text></a>
+                       <i class="black-text fa fa-pencil-square-o tiny left" style="position:relative; top:2px; font-size:1.5vw; margin:0"></i>REVIEWS</text></a>
             </div>
             <div class="col s2.5 m2.5 l2.5">           
                 <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:2.5vw; 
                 padding-right:2.5vw; bottom:8.5vh" href="4-ContactUs.html">
                     <text class="black-text" style="font-size:1.0vw"> 
-                       <i class="black-text material-icons tiny left" style="position:relative; bottom:2px; font-size:1.5vw; margin:0">email</i>CONTACT US</text></a>
+                       <i class="black-text material-icons tiny left" style="position:relative; font-size:1.5vw; margin:0">
+                       email</i>CONTACT US</text></a>
             </div>
           </div>
         </div>
@@ -208,7 +82,7 @@
     </div>
 
         <!-- SEARCH, FILTERS and ORDER BY-->
-        <div class="container" style="position:absolute; top:200px; width:260px; height:430px; margin-left:15px" id="buscar">
+        <div class="container" style="position:absolute; top:200px; width:260px; height:470px; margin-left:15px; padding-left:auto; padding-right:auto; margin-bottom:0px" id="buscar">
           <div class="row">
               <div class="input-field col s3 m3 l3" style=" width:210px" id="from" >
                   <label for="airlane" class="black-text" style="font-size:16px; position:relative; bottom:40px; left:0">From</label>
@@ -222,17 +96,29 @@
            </div>
           </div>
           <div class="row">
-            <div class="col s2 m2 l2" style="position:relative; bottom:40px; width:115px" id="departure">
+            <div class="col s3 m3 l2" style="position:relative; bottom:40px; width:115px">
               <label class="black-text" style="position:relative; top:7px; left:0px; font-size: 16px">Departure</label>
               <input type="date" placeholder="click here" class="datepicker" name="depart" style="font-size:12px"></input>
             </div>
-            <div class="col s2 m2 l2" style="position:relative; bottom:40px; width:115px" id="arrival">
-                <label class="black-text" style="position:relative; top:7px; font-size: 16px">Arrival</label>
+            <div class="col s2 m2 l2" style="position:relative; bottom:40px; width:115px"  id="return">
+                <label class="black-text" style="position:relative; top:7px; font-size: 16px">Return</label>
                 <input type="date" placeholder="click here" class="datepicker" name="depart" style="font-size:12px"></input>
             </div>
           </div>
 
-          <div class="row" style="position:relative; bottom:40px" >
+          <div class="row" style="position:relative; bottom:80px; right:10px" >      
+            <form action="#" name="ways">
+               <div class="col s10 m10 l12" id="way">
+                  <br/>
+                  <input name ="ways" type="radio" id="roundTrip" value="roundTrip"/>
+                  <label for="roundTrip" style="padding-right:15px; color:#424242">Round trip</label>
+                  <input name="ways" type="radio" id="oneWay" value="oneWay"/>
+                  <label for="oneWay" style="color:#424242">One way</label>
+               </div>
+            </form>
+          </div>
+
+          <div class="row" style="position:relative; bottom:85px" >
               <div class="input-field col s1 m1 l1" style="width:60px">
                  <select name="" id="">
                     <option value="1">1</option>
@@ -262,15 +148,20 @@
           <div class="row">
             <div class="col s2 m2 l2">
               <a class="btn waves-effect waves-light right teal" type="submit" href="" name="action" 
-              style="position:relative; left:135px; bottom:55px">Search</a>
+              style="position:relative; left:142px; bottom:95px">Search</a>
             </div>
           </div>
         </div>
 
-          <div class="row" style="position:relative; top:370px; margin:0; width:260px; height:50px">
+        <div class="container" style="position:absolute; top:700px; width:280px; height:100px">
+          <div class="row">
+            <div class="s3 m3 l3">
+              <text class="grey-text" style="position:relative; left:102px; top:10px"> Customize search </text>
+            </div>
+          </div>
+          <div class="row">
             <div class="col s3 m3 l3" style="width:150px">
-                <text class="grey-text" style="position:relative; top:55px; left:65px"> Customize search </text>
-                 <ul class="collapsible" data-collapsible="accordion" style="position:relative; left:30px; top:60px; width:200px">
+                 <ul class="collapsible" data-collapsible="accordion" style="position:relative; left:43px; width:200px">
                    <li>
                       <div class="collapsible-header center grey lighten-3 btn waves-effect black-text">ORDER BY</div>
                       <div class="collapsible-body" style="bottom:10px; padding-bottom:20px">
@@ -293,8 +184,7 @@
                  </ul>
               </div>
             </div>  
-         </div>
-
-
+          </div>
+        </div>      
     </body>   
 </html>
