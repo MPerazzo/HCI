@@ -98,9 +98,9 @@
 
         <!-- OPCION MAKE-REVIEW -->
         <div class="container" id="makereview" style="margin-bottom:30px">
-	        <div class="row" id="search1" style="margin-bottom:30px">
+	        <div class="row" id="search1" style="margin-bottom:30px; height:690px">
 	            <form class="col s12" style="margin-top:3.0vh; margin-bottom:30px">
-	               <div class="row">
+	               <div class="row" style="margin-bottom:0">
 	               	  <div class="input-field col s6 m4 l3">
 	                     <input id="airlane" type="text" placeholder="Write the airline alias here" class="validate">
 	                     <label for="airlane" class="black-text" style="font-size:16px">Airline</label>
@@ -109,6 +109,11 @@
 	                     <input id="flightNumber" type="text" placeholder="Write the flight number here" class="validate">
 	                     <label for="flightNumber" class="black-text" style="font-size:16px">Flight number</label>
 	                  </div>
+	               </div>
+	                <div class="row">
+	               		<div class="col s6 m4 l3">
+		               		<p class="black-text" style="font-size:16px">Fields to rate:</p>
+		               	</div>
 	               </div>
 	               <div class="row" style="margin-top:2.5vh">
 	               		<div class="col s6 m4 l3">
@@ -169,7 +174,7 @@
 	               		</div>
 	               </div>
 
-	                <div class="row" style="margin-top:2.0vh; margin-bottom:5.5vh; padding-bottom:0">
+	                <div class="row" style="margin-top:1.0vh; padding-bottom:0">
 	               		<div class="input-field col s12 m12 l12">
 	               			<text class="black-text">Would you recommend it to a friend?
 		               			<p style="margin:0; padding:0">
@@ -181,16 +186,19 @@
 			                   </p></text>
 	               		</div>
 	               </div>
-	               <form method="post" style="margin-top:400px">
-						<div>
-							<text class="black-text"> Comment: </text>
-							<textarea name="comments" class="left" d="comments" style="font-size:1.2em"></textarea>
-						</div>
-						<a class="btn waves-effect waves-light teal-lighten-2 left" style="position:relative; top:15px" 
-						type="submit" name="action">SUBMIT<i class="white-text material-icons tiny right" style="font-size:1vw; margin:0; margin-left:5px">send</i></a>
-					</form>
+	               <div class="container left" style="position:relative; top:15px">
+		               <text class="black-text"> Comment: </text>
+		               <form method="post">
+							<div>
+								<textarea name="comments" class="left" d="comments" style="font-size:14px; width:500px;"></textarea>
+							</div>
+							<a class="btn waves-effect waves-light teal-lighten-2 left" style="position:relative; top:15px" 
+							type="submit" name="action">SUBMIT<i class="white-text material-icons tiny right" style="font-size:1vw; margin:0; margin-left:5px">send</i></a>
+						</form>
+	            	</div>
 	            </form>
 	        </div>
-        </div>
+        </di
+        v>
    </body>
 </html>
