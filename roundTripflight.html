@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>FlySafely</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">      
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="css/materialize.min.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src="js/materialize.min.js"></script>
+      <style type="text/css">
+
+        .letter {
+          font-size: 12px;
+          font-weight: bold;
+          color: #616161;
+        }
+
+        .letterINI {
+          font-size: 20px;
+          font-weight: bold;
+          color: #009688;
+        }
+
+        .origen {
+          background-color: #009688;
+          color: #ffffff;
+          padding-left: 1em;
+          padding-right: 0em;
+        }
+
+        #tableF {
+          padding-right: 0em;
+          padding-left: 0em;  
+          border-top-width: 0.3em;
+          border-left-width: 0.1em; 
+          border-style: solid;
+          border-bottom-width: 0.1em;
+          border-right-width: 0.1em; 
+          border-color: #e0e0e0;
+        }
+
+        #buttonF {
+          padding-left: 1em;
+          padding-right: 1em;
+          padding-top: 1em;
+          margin-bottom: 0em;
+          color: #ffffff;
+          background-color: #eeeeee;
+          border-top-width: 0.3em;
+          border-left-width: 0.0em; 
+          border-style: solid;
+          border-bottom-width: 0.0em;
+          border-right-width: 0.1em; 
+          border-color: #e0e0e0;
+        }
+
+         #containerdetails {
+          padding-left: 1em;
+          padding-right: 1em;          
+          background-color: #eeeeee;
+          border-style: solid;
+          border-top-width: 0.0em;
+          border-left-width: 0.0em; 
+          border-bottom-width: 0.1em;
+          border-right-width: 0.1em;
+          border-color: #e0e0e0;
+        }
+
+        #buttondetails {
+          border-top-width: 0.1em;
+          border-left-width: 0.1em; 
+          border-bottom-width: 0.1em;
+          border-right-width: 0.1em;
+          border-color: #BDBDBD;
+          border-style: solid;
+
+        }
+
+        .btnContinue {
+          margin-top: 1em;
+          margin-left: 17%;
+        }
+
+      </style>
+   </head>
+   <body style="margin:0; margin-top:50px; padding=0;">
+    <div class="container" >
+        <div class="row">
+	        <div class="col s7 m7 l7" id="tableF">
+	            <table class="striped">
+	              <tbody>
+	                <tr>
+	                  <td><div class="origen">departure</div><br/><div class="letter">fecha</div></td>
+	                  <td><div class="letterINI">ORI</div><div class="letter">nombre Ciudad origen<br/>nombre Aeropuerto origen</div></td>
+	                  <td><div class="letterINI">DES</div><div class="letter">nombre Ciudad destino<br/>nombre Aeropuerto destino</div></td>
+	                  <td><div class="letter"># de vuelo</div></td>
+	                </tr>
+	                <tr>
+	                  <td>Aerolinea</td>
+	                  <td><div class="letterH">hora salida</div></td>
+	                  <td><div class="letterH">hora arribo</div></td>
+	                  <td><div class="letterH">total hora</div></td>
+	                </tr>
+	              </tbody>
+	            </table>
+	        </div>
+	        <div class="col s3 m3 l3" id="buttonF" style="height:100px">
+	          <div class="black-text center" style="font-size:12px; position:relative; bottom:13px">Returning price</div>
+	          <div class="black-text center" style="font-size:24px; position:relative; bottom:18px">$20200</div>
+	          <from>
+	            <div class="btn waves-effect waves-light btnContinue" style="position:relative; bottom:35px">
+	            continue</div>
+	          </from>
+        	</div>
+        	<div class="col s3 m3 l3" id="containerdetails" style="height:61px; position:relative; bottom:8px">
+	          
+	          <from>
+		          <ul class="collapsible grey lighten-3 z-depth-0" style="position:relative; z-index:10" data-collapsible="accordion">
+			         <li>
+			            <div class="collapsible-header center grey lighten-3" id="buttondetails">Price details</div>
+			            <i class="black-text fa fa-sort-desc tiny left" style="position:relative; bottom:35px; left:40px"></i>
+			            <div class="collapsible-body">
+		              <p style="margin-top:10px; margin-left:0px; padding:0; position:relative; right:12px">Total Price:</p>
+                  <p style="margin-top:5px; margin-left:10px; padding:0">Going flight:</p>
+                  <p style="margin-top:5px; margin-left:10px; padding:0">Adult(s):</p>
+				          <p style="margin-top:5px; margin-left:10px; padding:0">child(s):</p>
+				          <p style="margin-top:5px; margin-left:10px; padding:0">infant(s):</p>
+				          <p style="margin-top:5px; margin-left:10px; padding:0">taxs and fees:</p>
+			            </div>
+			         </li>
+				    </ul>
+	            
+	          </from>
+        	</div>
+        </div>  
+    </div>          
+   </body>   
+</html>

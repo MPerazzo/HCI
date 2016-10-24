@@ -36,28 +36,22 @@ $(document).ready(function(){
 
   var lastActive;
 
+  var cantPages;
 
   function Pagination() {
 
-    var cant_flights = 100;
+    var cant_flights = 30;
 
     var flights_per_page = 10;
 
-    var cantPages = Math.ceil(cant_flights/flights_per_page);
+    cantPages = Math.ceil(cant_flights/flights_per_page);
 
     if (cantPages == 0)
       return;
-
-    // left-arrow
-
-    // var left_arrow = document.createElement("i");
-    // left_arrow.className = "material-icons";
-    // <i class="material-icons">chevron_left</i>
-
     
     var page_ilustrator =  document.getElementById("pagesholder");
 
-    for (i=1; i<cantPages; i++) {
+    for (i=1; i<=cantPages; i++) {
 
       var page_href = document.createElement("a");
       page_href.href = "#pag" + i.toString();
@@ -69,22 +63,44 @@ $(document).ready(function(){
       var page =  document.createElement("li");
       page.className="waves-effect";
       page.appendChild(page_href);
+      page.id = i.toString();
 
       if (i==1) {
         page.classList.add('active');
         lastActive = page;
       }
 
+      
+
       page.onclick = function() {
                                   
-                                  this.classList.add('active');
                                   lastActive.classList.remove('active');
-                                  lastActive = this;
+                                  
+                                  var lastPageActive_string = "pag" + lastActive.id;
+
+                                  var lastPageActive = document.getElementById(lastPageActive_string);
+
+                                  lastPageActive.style.display = "none";
+
+                                  var currentPage_string = "pag" + this.id;
+
+                                  var currentPage = document.getElementById(currentPage_string);
+
+                                  currentPage.style.display = "initial";
 
                                   this.classList.add('active');
+                                  lastActive = this;
+
                                }
 
       page_ilustrator.appendChild(page);
     }
+
+    for (i=2; i<=cantPages; i++) {
+        string = "pag" + i.toString();
+        var tohide = document.getElementById(string);
+        tohide.style.display = "none";
+
+      }
 
   }

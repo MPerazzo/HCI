@@ -13,6 +13,7 @@ $(document).ready(function(){
         selectMonths: true, 
         selectYears: 5,
         format: 'dd/mm/yyyy',
+        
         onClose: function() {
           $(document.activeElement).blur();
         }
@@ -31,5 +32,6 @@ $(document).ready(function(){
          document.getElementById("return").style.display = 'none';  
       }
 
-      
 	});
+
+  
