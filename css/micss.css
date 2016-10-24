@@ -14,7 +14,7 @@
 
   .margen{
     margin-top: -1em;
-    
+
   }
 
   ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -30,7 +30,7 @@
    color:    #9E9E9E;
    opacity:  1;
   }
-  
+
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color:    #9E9E9E;
   }
@@ -100,7 +100,7 @@
 
   div.container4 {
     height: 1.52em;
-    position: relative 
+    position: relative
   }
   div.container4 p {
     margin: 0;
@@ -171,12 +171,12 @@
 
   #tableF {
     padding-right: 0em;
-    padding-left: 0em;  
+    padding-left: 0em;
     border-top-width: 0.3em;
-    border-left-width: 0.1em; 
+    border-left-width: 0.1em;
     border-style: solid;
     border-bottom-width: 0.1em;
-    border-right-width: 0.1em; 
+    border-right-width: 0.1em;
     border-color: #e0e0e0;
   }
 
@@ -188,20 +188,20 @@
     color: #ffffff;
     background-color: #eeeeee;
     border-top-width: 0.3em;
-    border-left-width: 0.0em; 
+    border-left-width: 0.0em;
     border-style: solid;
     border-bottom-width: 0.0em;
-    border-right-width: 0.1em; 
+    border-right-width: 0.1em;
     border-color: #e0e0e0;
   }
 
    #containerdetails {
     padding-left: 1em;
-    padding-right: 1em;          
+    padding-right: 1em;
     background-color: #eeeeee;
     border-style: solid;
     border-top-width: 0.0em;
-    border-left-width: 0.0em; 
+    border-left-width: 0.0em;
     border-bottom-width: 0.1em;
     border-right-width: 0.1em;
     border-color: #e0e0e0;
@@ -209,7 +209,7 @@
 
   #buttondetails {
     border-top-width: 0.1em;
-    border-left-width: 0.1em; 
+    border-left-width: 0.1em;
     border-bottom-width: 0.1em;
     border-right-width: 0.1em;
     border-color: #BDBDBD;
@@ -237,3 +237,16 @@
    margin-right: 0em;
 
   }
+
+.twitter-typeahead .tt-dropdown-menu .tt-suggestion:nth-child(odd) ,
+.twitter-typeahead .tt-menu .tt-suggestion:nth-child(odd) {
+  background-color: #00b3a1;
+  color: #FFF;
+}
+
+.swap {
+  cursor: pointer;
+}
+.swap:active {
+  opacity: .5;
+}
