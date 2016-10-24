@@ -2,20 +2,24 @@
 <html>
    <head>
       <title>FlySafely</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1">      
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="css/materialize.min.css">
       <link rel="stylesheet" href="css/micss.css">
-
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="js/materialize.min.js"></script>
+      <script src="js/typeaheadJS.js"></script>
+      <script src="js/lodash.js"></script>
+      <script src="js/bloodhound.js"></script>
+
       <script src="js/homejs.js"></script>
 
    </head>
-   
+
    <body style="margin:0; padding=0;">
-     
+
      <!-- HEADER -->
      <div class="up">
      <div class="container">
@@ -26,44 +30,44 @@
             </div>
           </div>
         </div>
-     </div>     
+     </div>
      </div>
 
      <div class="card-panel teal lighten-2"> </div>
 
      <div class="container">
           <div class="#eeeeee grey lighten-3" style="height:50px"></div>
-     </div>    
+     </div>
 
-     <div class="margen" style="position:relative; top:20px" >             
+     <div class="margen" style="position:relative; top:20px" >
 
-        <div class="row" style="display:flex; align-items: center; justify-content:center">       
+        <div class="row" style="display:flex; align-items: center; justify-content:center">
           <div class="col s2.5 m2.5 l2.5">
               <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:4.4vw; padding-right:4.4vw; bottom:8.5vh" href="1-home.html">
-                  <text class="black-text" style="font-size:1.0vw"> 
+                  <text class="black-text" style="font-size:1.0vw">
                     <i class="black-text material-icons tiny left" style="position:relative; bottom:2px; font-size:1.5vw; margin:0">
                      home</i>HOME</text></a>
           </div>
-          <div class="col s2.5 m2.5 l2.5">           
+          <div class="col s2.5 m2.5 l2.5">
               <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:2.8vw; padding-right:2.8vw; bottom:8.5vh" href="http://www.tutorialspoint.com">
-                  <text class="black-text" style="font-size:1.0vw"> 
-                    <i class="black-text fa fa-dollar tiny left" style="position:relative; left:5px; font-size:1.5vw; margin:0"> 
+                  <text class="black-text" style="font-size:1.0vw">
+                    <i class="black-text fa fa-dollar tiny left" style="position:relative; left:5px; font-size:1.5vw; margin:0">
                     </i>DISCOUNTS</text></a>
           </div>
-          <div class="col s2.5 m2.5 l2.5">           
+          <div class="col s2.5 m2.5 l2.5">
               <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:3.5vw; padding-right:3.5vw; bottom:8.5vh" href="3-reviews.html">
-                  <text class="black-text" style="font-size:1.0vw"> 
+                  <text class="black-text" style="font-size:1.0vw">
                     <i class="black-text fa fa-pencil-square-o tiny left" style="position:relative; top:2px; font-size:1.5vw;margin:0">
                     </i>REVIEWS</text></a>
           </div>
-          <div class="col s2.5 m2.5 l2.5">           
+          <div class="col s2.5 m2.5 l2.5">
               <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:2.5vw; padding-right:2.5vw; bottom:8.5vh" href="4-ContactUs.html">
-                  <text class="black-text" style="font-size:1.0vw"> 
+                  <text class="black-text" style="font-size:1.0vw">
                     <i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">
                     email</i>CONTACT US</text></a>
-          </div> 
+          </div>
         </div>
-                          
+
       </div>
 
       <!-- CUADRO DE BUSQUEDA -->
@@ -80,7 +84,9 @@
                        <div class="input-field col s5 m5 l3" style="position:relative; bottom:20px" >
                           <label for="airlane" class="black-text" style="font-size:16px; position:relative; bottom:40px; left:0;">
                           From</label>
-                          <input id="airlane" type="text" placeholder="write starting airpot here" class="autocomplete">
+                          <div id="bloodhound">
+                            <input id='airportFrom' class="typeahead" type="text" placeholder="write starting airport here">
+                          </div>
                        </div>
                        <div class="col" style="position:relative; bottom:10px; right:3px" id="oneWayIcon">
                           <br/>
@@ -88,12 +94,14 @@
                        </div>
                        <div class="col" style="position:relative; bottom:10px; right:3px" id="roundTripIcon">
                           <br/>
-                          <p><i class="small material-icons">swap_horiz</i></p>
+                          <p id='swap'><i class="swap small material-icons">swap_horiz</i></p>
                        </div>
                        <div class="input-field col s5 m5 l3" style="position:relative; bottom:20px" >
                           <label for="airlane" class="black-text" style="font-size:16px; position:relative; bottom:40px; left:0;">
                           To</label>
-                          <input id="airlane" type="text" placeholder="write destiny airpot here" class="autocomplete">
+                          <div id="bloodhound">
+                            <input id='airportTo' class="typeahead" type="text" placeholder="write destiny airport here">
+                          </div>
                        </div>
                        <div class="col s6 m7 l2" style="margin-left:20px">
                           <label class="black-text" style="position:relative; top:7px; font-size: 16px">Departure Date</label>
@@ -108,7 +116,7 @@
                           today</i></input>
                        </div>
                      </div>
-                     <div class="row" style="position:relative; bottom:40px; left:7px" >      
+                     <div class="row" style="position:relative; bottom:40px; left:7px" >
                         <form action="#" name="ways">
                            <div class="col s6 m6 l4" id="way">
                               <br/>
@@ -147,7 +155,7 @@
                         </div>
                         <div class="col s2 m2 l2 offset-s1 offset-m1 offset-l1">
                            <br/>
-                           <a class="btn waves-effect waves-light teal-lighten-2 right" type="submit" href="5-flight-results.html" 
+                           <a class="btn waves-effect waves-light teal-lighten-2 right" type="submit" href="5-flight-results.html"
                            name="action">
                            Search</a>
                         </div>
@@ -157,5 +165,5 @@
 
             </div>
   	    </div>
-   </body>   
+   </body>
 </html>

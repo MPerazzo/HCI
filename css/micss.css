@@ -14,7 +14,7 @@
 
   .margen{
     margin-top: -1em;
-    
+
   }
 
   ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -30,7 +30,7 @@
    color:    #9E9E9E;
    opacity:  1;
   }
-  
+
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color:    #9E9E9E;
   }
@@ -100,7 +100,7 @@
 
   div.container4 {
     height: 1.52em;
-    position: relative 
+    position: relative
   }
   div.container4 p {
     margin: 0;
@@ -150,3 +150,15 @@
     left: 0px;
   }
 
+.twitter-typeahead .tt-dropdown-menu .tt-suggestion:nth-child(odd) ,
+.twitter-typeahead .tt-menu .tt-suggestion:nth-child(odd) {
+  background-color: #00b3a1;
+  color: #FFF;
+}
+
+.swap {
+  cursor: pointer;
+}
+.swap:active {
+  opacity: .5;
+}
