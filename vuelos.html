@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>FlySafely</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">      
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="css/materialize.min.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src="js/materialize.min.js"></script>
+      <style type="text/css">
+        .letter {
+          font-size: 12px;
+          font-weight: bold;
+          color: #616161;
+        }
+
+        .letterINI {
+          font-size: 20px;
+          font-weight: bold;
+          color: #009688;
+        }
+
+        .origen {
+          background-color: #009688;
+          color: #ffffff;
+          padding-left: 1em;
+          padding-right: 0em;
+        }
+
+        #flight {
+          border-top-width: 0.3em;
+          border-left-width: 0.1em; 
+          border-style: solid;
+          border-bottom-width: 0.1em;
+          border-right-width: 0.1em; 
+          border-color: #e0e0e0;
+        }
+        #tableF {
+          padding-right: 0em;
+          padding-left: 0em;  
+          border-top-width: 0.3em;
+          border-left-width: 0em; 
+          border-style: solid;
+          border-bottom-width: 0em;
+          border-right-width: 0em; 
+          border-color: #e0e0e0;
+        }
+
+        #buttonF {
+          padding-left: 1em;
+          padding-right: 1em;
+          padding-top: 1em;
+          margin-bottom: 0em;
+          color: #000000;
+          background-color: #eeeeee;
+          border-top-width: 0.3em;
+          border-left-width: 0.1em; 
+          border-style: solid;
+          border-bottom-width: 0.0em;
+          border-right-width: 0.1em; 
+          border-color: #e0e0e0;
+        }
+
+         #containerdetails {
+          padding-left: 1em;
+          padding-right: 1em;          
+          background-color: #eeeeee;
+          border-style: solid;
+          border-top-width: 0.0em;
+          border-left-width: 0.0em; 
+          border-bottom-width: 0.1em;
+          border-right-width: 0.1em;
+          border-color: #e0e0e0;
+          height:61px; 
+          position:relative; 
+          bottom:8px
+        }
+
+        #buttondetails {
+          border-top-width: 0.1em;
+          border-left-width: 0.1em; 
+          border-bottom-width: 0.1em;
+          border-right-width: 0.1em;
+          border-color: #BDBDBD;
+          border-style: solid;
+
+        }
+
+        .btnContinue {
+          margin-top: 1em;
+          margin-left: 25%;
+          margin-bottom: 1em;
+          position:relative; 
+        }
+
+        .priceDes {
+          font-size:12px; 
+          position:relative; 
+          bottom:13px;
+        }
+        
+        .price {
+          font-size:24px; 
+          position:relative; 
+          bottom:18px;
+        }
+
+        .containerDetailsCollap {
+          position:relative;
+          z-index:10;
+        }
+
+        .containerDetailsCollap {
+          position:relative;
+          z-index:10;
+        }
+
+        #iconDet{
+          position:relative; 
+          bottom:35px; 
+          left:40px;
+        }
+
+        #letterDet1 {
+          margin-top:0px; 
+          margin-left:0px; 
+          padding:0; 
+          position:relative; 
+          right:12px;
+        }
+
+        #letterDet2 {
+          margin-top:5px; 
+          margin-left:10px; 
+          padding:0;
+        }
+
+        .tabs .indicator {
+          background-color: #4DB6AC;
+        }
+        .tabs {
+          color: #4DB6AC;
+        }
+      </style>
+      <script type="text/javascript">
+
+        var stage;
+
+        var getJSON = function(url, callback) {
+           var xhr = new XMLHttpRequest();
+           xhr.open("get", url, true);
+           xhr.responseType = "json";
+           xhr.onload = function() {
+              var status = xhr.status;
+              if(xhr.readyState == 4){
+                 if (status == 200) {
+                    callback(null, xhr.response);
+                 } else {
+                    callback(status);
+                 }
+              }
+              if(xhr.readyState >= 1 && xhr.readyState <= 3){
+              }
+           };
+           xhr.send();
+        };
+
+        $(document).ready(function(){
+
+          /*var from = sessionStorage.getItem('from');
+          var to = sessionStorage.getItem('to');
+          var oneway = sessionStorage.getItem('oneway');
+          var adults = sessionStorage.getItem('adults');
+          var children = sessionStorage.getItem('children');
+          var infants = sessionStorage.getItem('infants');
+          var dep_date = sessionStorage.getItem('dep_date');
+          var ret_date;*/
+          var oneway = "false"; 
+          stage = "go";
+          //getFlight(from, to, dep_time, adults, children, infants, "fare", "Ida");
+          
+          getSymbol("USD");
+
+          getFlight("BUE", "TUC", "2016-12-25", "1", "0", "0", "fare", "Ida");
+          if(oneway === "false") {
+            if($('#arrivalTab').hasClass('disabled')){
+              $('#arrivalTab').removeClass('disabled');
+            }
+            //ret_date = sessionStorage.getItem('ret_date');
+            getFlight("TUC", "BUE", "2016-12-25", "1", "0", "0", "fare", "Vuelta");
+            //getFlight(to, from, ret_time, adults, children, infants, "fare", "Vuelta");
+          } else {
+            if(!$('#arrivalTab').hasClass('disabled')){
+              $('#arrivalTab').addClass('disabled');
+            }
+          }
+
+          /*$("#order-criteria").on("change", function(){
+
+              if (stage==="go"){            
+
+                  $('#content-Ida').text("");
+
+                  getFlight(from,to,dep_date,adults,children,infants, $( "#order-criteria option:selected" ).val() ,"Ida");
+
+                  $("#content-Ida").html(sessionStorage.getItem("content-list-Ida"));
+
+              }else{
+
+                  $('#content-Vuelta').text("");
+
+                  var ret_date = sessionStorage.getItem('ret_date');
+
+                  getFlight(to,from,ret_date,adults,children,infants, $( "#order-criteria option:selected" ).val() ,"Vuelta");
+
+                  $('.paginationjs').text("");                        
+
+                  $("#content-Vuelta").html(sessionStorage.getItem("content-list-Vuelta"));
+
+                  paginate("Vuelta");
+              }
+
+              
+
+          });*/
+
+
+          $("#flights").on('click', '.select-btn-Ida', function(){        
+              //var oneway = sessionStorage.getItem("oneway");
+              var oneway = "false";
+
+              var goFlightId;
+
+              stage = "return";
+              
+              if (oneway === "true"){
+
+                  goFlightId = $(this).attr("id");
+
+                  sessionStorage.setItem("goId",goFlightId);
+
+                  var oneway = sessionStorage.getItem("oneway");
+
+                  saveData(goFlightId,"Ida");
+
+                  window.location.href = 'vuelosss.html';
+                  
+              }
+
+              if (oneway === "false"){
+
+                  //var ret_date = sessionStorage.getItem('ret_date');
+
+                  //goFlightId = $(this).attr("id");
+
+                  //sessionStorage.setItem("goId",goFlightId);
+
+                  //saveData(goFlightId,"Ida");
+
+                              
+                  window.location.href = 'vuelosss.html';
+
+                  //$('html, body').animate({ scrollTop: 0 }, 'fast');
+
+                  //$("#content-Vuelta").html(sessionStorage.getItem("content-list-Vuelta"));
+
+                  //paginate("Vuelta");
+                  
+              }
+
+          });
+
+          $("#flights").on('click', '.select-btn-Vuelta', function(){
+
+                  //var returnFlightId = $(this).attr("id");
+
+                  //sessionStorage.setItem("returnId",returnFlightId);            
+
+                  //saveData(returnFlightId,"Vuelta");
+
+                  window.location.href = 'vuelosss.html';
+
+          });
+
+
+        });
+
+        function getSymbol(simboloId) {
+            getJSON("http://hci.it.itba.edu.ar/v1/api/misc.groovy?method=getcurrencybyid&id=" + simboloId, function(err, data) {
+              if (err != null) {
+                  alert("ocurrio un error" + err);
+              } else {
+                  simbolo = data.currency.symbol;
+              }
+            });
+        }
+
+        function GetFormattedDate(date) {
+
+            var finalDate = date.split(" ");
+
+            var months = [ "enero","febrero","marzo","abril","mayo","junio",
+                    "julio","agosto","septiembre","octubre","noviembre","diciembre" ];
+
+            var theDate = finalDate[0].split("-");
+            var month = theDate[1]-1;
+            var day = theDate[2];
+            var year = theDate[0];
+
+            return day + ' de ' + months[parseInt(month)] + ' de ' + year;
+        }
+
+        function GetFormattedTime(date) {    
+
+            var spaced = date.split(" ");
+
+            var time = spaced[1];
+
+            var hours = time.split(":")[0];
+            var min = time.split(":")[1];;
+
+            return hours + ':' + min;
+        }
+
+
+
+        function getFlight(from,to,dep_date,adults,children,infants,order,round) {
+
+          var url = ("http://hci.it.itba.edu.ar/v1/api/booking.groovy?method=getonewayflights&from=" + from + "&to=" + to + "&dep_date=" + dep_date + "&adults=" + adults + "&children=" + children + "&infants=" + infants + "&sort_key=" + order);
+          
+          getJSON(url, function(err, data) {
+            if (err != null) {
+                alert("ocurrio un error" + err);
+            } else {
+                $.each(data.flights, function (){
+
+                	  var container2 = $("<div class='container' >");
+
+                	  var container1 = $("<div class='row' style='position:relative; width:900px; left:160px; bottom:20px'>");
+
+                      var flight = $("<div class='row' id='flight'>");
+
+                      var tableF = $("<div class='col s9 m9 l9' id='tableF'>");
+
+                      var table = $("<table class='striped'>");
+
+                      var tbody = $("<tbody>");
+
+                      var tr = $("<tr>");
+
+                      /* First Row First Column */
+
+                      var dep_date = GetFormattedDate(this.outbound_routes[0].segments[0].departure.date);
+                      var roundT;
+
+                      if(round === "Ida") {
+                        roundT = $.parseHTML("<td><div class='origen'>departure</div><br/><div class='letter'>" + dep_date + "</div></td>");
+                      } else {
+                        roundT = $.parseHTML("<td><div class='origen'>arrival</div><br/><div class='letter'>" + dep_date + "</div></td>");
+                      }
+    
+                      tr.append(roundT);
+
+                      /* First Row Second Column */
+
+                      var fromId = this.outbound_routes[0].segments[0].departure.airport.id;  
+
+                      var fromDesc = this.outbound_routes[0].segments[0].departure.airport.description;
+
+                      var fromCity = this.outbound_routes[0].segments[0].departure.airport.city.name;
+
+                      var fromT = $.parseHTML("<td><div class='letterINI'>" + fromId + "</div><div class='letter'>" + fromDesc + "<br/>" +fromCity + "</div></td>");
+
+                      tr.append(fromT);
+
+                      /* First Row Third Column */
+
+                      var toId = this.outbound_routes[0].segments[0].arrival.airport.id;                         
+
+                      var toDesc = this.outbound_routes[0].segments[0].arrival.airport.description;
+
+                      var toCity = this.outbound_routes[0].segments[0].arrival.airport.city.name; 
+
+                      var toT = $.parseHTML("<td><div class='letterINI'>" + toId + "</div><div class='letter'>" + toDesc + "<br/>" + toCity + "</div></td>");
+
+                      tr.append(toT);
+
+                      /* First Row Fourth Column */
+
+                      var flightId = this.outbound_routes[0].segments[0].id;
+
+                      var flightIdT = $.parseHTML("<td><div class='letter'>Flight No.:" + flightId + "</div></td>");
+
+                      tr.append(flightIdT);
+
+                      /* Second Row First Column */
+
+                      var tr1 = $("<tr>");
+
+                      var airline = this.outbound_routes[0].segments[0].airline.name;
+
+                      var airlineT = $.parseHTML("<td>" + airline + "</td>");
+
+                      tbody.append(tr1);
+
+                      tr1.append(airlineT);
+
+                      /* Second Row Second Column */
+
+                      var dep_time = GetFormattedTime(this.outbound_routes[0].segments[0].departure.date);
+
+                      var dep_timeT = $.parseHTML("<td>" + dep_time + "</td>");
+
+                      tr1.append(dep_timeT);
+
+                      /* Second Row Third Column */
+
+                      var arr_time = GetFormattedTime(this.outbound_routes[0].segments[0].arrival.date);
+
+                      var arr_timeT = $.parseHTML("<td>" + arr_time + "</td>");
+
+                      tr1.append(arr_timeT);
+
+                      /* Second Row First Column */
+
+                      var duration = this.outbound_routes[0].duration;
+
+                      var durationT = $.parseHTML("<td>" + duration + "</td>");
+
+                      tr1.append(durationT);
+
+                      /* Button */
+                      var button = $("<div class='col s3 m3 l3'  id='buttonF'>");
+                      var priceWayTitelT; 
+                      var priceWay = this.price.total.total;
+                      var priceWayT = $.parseHTML("<div class='black-text center price' >" + simbolo + " " + priceWay + "</div>");
+
+                      if(round === "Ida") {
+                          priceWayTitelT = $.parseHTML("<div class='black-text center priceDes' >Going price</div>");
+
+                      } else {
+                          priceWayTitelT = $.parseHTML("<div class='black-text center priceDes'>Returning price</div>");
+                      }
+
+                      var buttonT = $.parseHTML("<from><div class='btn waves-effect waves-light btnContinue select-btn-" + round + "' id='" + flightId + "' >continue</div></from>");
+
+                      var info = $("<div>");
+
+                      var pricePerAdult = this.price.adults.base_fare;
+                      var pricePerAdultT = $.parseHTML("<div>price per adult:  " + simbolo + " " + pricePerAdult + "</div>");
+                      info.append(pricePerAdultT);
+
+                      var goingT;
+                      var totalT;
+                      if(round === "Vuelta") {
+                        goingT = $.parseHTML("<div>going flight: " + "va el valor going" + "</div>");
+                        totalT = $.parseHTML("<div>total price:" + "va el total" + "</div>");
+                        info.append(goingT);
+                        info.append(totalT);
+
+                      }
+
+                      var totalPriceAdult;
+                      var totalPriceAdultT;
+                      if(this.price.adults.quantity != 0) {
+                        totalPriceAdult = this.price.adults.quantity * pricePerAdult;
+                        totalPriceAdultT = $.parseHTML("<div>adult(s):  " + simbolo + " " + totalPriceAdult + "</div>");
+                        info.append(totalPriceAdultT);
+                      }
+
+                      var totalPriceChildren;
+                      var totalPriceChildrenT;
+                      if(this.price.children != null) {
+                        totalPriceChildren = this.price.children.quantity * this.price.children.base_fare;
+                        totalPriceChildrenT = $.parseHTML("<div>child(ren):  " + simbolo + " " + totalPriceChildren + "</div>");
+                        info.append(totalPriceChildrenT);
+                      }
+
+                      var totalPriceInfant;
+                      var totalPriceInfantT;
+                      if(this.price.infants != null) {
+                        totalPriceInfant = this.price.infants.quantity * this.price.infants.base_fare;
+                        totalPriceInfantT = $.parseHTML("<div>infant(s):  " + simbolo + " " + totalPriceInfant + "</div>");
+                        info.append(totalPriceInfantT);
+                      }
+
+                      var taxsAndFees = this.price.total.charges + this.price.total.taxes;
+                      var taxsAndFeesT = $.parseHTML("<div>taxs and fees:  " + simbolo + " " + taxsAndFees + "</div>");
+                      info.append(taxsAndFeesT);
+
+                      button.append(priceWayTitelT);
+                      button.append(priceWayT);
+                      button.append(info);
+                      button.append(buttonT);
+
+                      tbody.append(tr);
+                      tbody.append(tr1);
+                      table.append(tbody);
+                      tableF.append(table);
+                      
+                      flight.append(tableF);
+                      flight.append(button);
+
+                      container1.append(flight);
+                      container2.append(container1);
+
+                      if(round === "Ida") {
+                        $("#flights").append(container2);
+                      } else {
+                        $("#flights").append(container2);
+                      }
+
+
+                      
+                });
+                alert("document ready");
+
+              }
+          });
+        }
+
+      </script>
+   </head>
+   <body style="margin:0; padding=0;">
+    <div class="container" >
+    <div id="flights">
+    </div>
+     
+    </div>
+
+            
+   </body>   
+</html>
