@@ -9,7 +9,6 @@ $(document).ready(function(){
         onClose: function() {
           $(document.activeElement).blur();
         }
-
      });
 
       var roundTrip = document.getElementById("roundTrip");
@@ -82,5 +81,4 @@ $(document).ready(function(){
         $('#airportTo')[0].value = aux;
 
      });
-
 	});

@@ -1,0 +1,241 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="css/materialize.min.css">
+      <link rel="stylesheet" href="css/micss.css">
+      
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src="js/materialize.min.js"></script>
+      <script src="js/passengers.js"></script>
+
+    </head>
+
+
+
+    <body>
+
+    <!-- HEADER -->
+    <div class=container4>
+     <div class="up">
+     <div class="container">
+        <div class="#eeeeee grey lighten-3">
+          <div class="row">
+            <div class="col s12">
+            <img class="responsive-img" src="LogoHCI.png" width="110px" style="position:relative; right:155px; bottom:7px">
+            </div>
+          </div>
+        </div>
+      </div>     
+      </div>
+
+     <div class="card-panel teal lighten-2"> </div>
+
+     <div class="container">
+          <div class="#eeeeee grey lighten-3" style="height:50px"></div>     
+     </div>    
+
+     <div class="margen" style="position:relative; top:20px" >             
+
+          <div class="row" style="display:flex; align-items: center; justify-content:center">       
+            <div class="col s2.5 m2.5 l2.5">
+                <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:4.4vw; 
+                padding-right:4.4vw; bottom:8.5vh" href="1-home.html">
+                    <text class="black-text" style="font-size:1.0vw"> 
+                      <i class="black-text material-icons tiny left" style="position:relative; bottom:2px; font-size:1.5vw; margin:0">
+                       home</i>HOME</text></a>
+            </div>
+            <div class="col s2.5 m2.5 l2.5">           
+                <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:2.8vw; 
+                padding-right:2.8vw; bottom:8.5vh" href="http://www.tutorialspoint.com">
+                    <text class="black-text" style="font-size:1.0vw"> 
+                      <i class="black-text fa fa-dollar tiny left" style="position:relative; left:5px; font-size:1.5vw; margin:0"> 
+                      </i>DISCOUNTS</text></a>
+            </div>
+            <div class="col s2.5 m2.5 l2.5">           
+                <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:3.5vw; 
+                padding-right:3.5vw; bottom:8.5vh" href="3-reviews.html">
+                    <text class="black-text" style="font-size:1.0vw"> 
+                      <i class="black-text fa fa-pencil-square-o tiny left" style="position:relative; top:2px; font-size:1.5vw;margin:0">
+                      </i>REVIEWS</text></a>
+            </div>
+            <div class="col s2.5 m2.5 l2.5">           
+                <a class="btn waves-effect grey lighten-3" style="margin:0; height:6.0vh; width:14.0vw; padding-left:2.5vw; 
+                padding-right:2.5vw; bottom:8.5vh" href="4-ContactUs.html">
+                    <text class="black-text" style="font-size:1.0vw"> 
+                      <i class="black-text material-icons tiny left" style="font-size:1.5vw; margin:0">
+                      email</i>CONTACT US</text></a>
+            </div> 
+            </div>
+     </div>
+                          
+      <!-- BREADCRUMB -->
+      <div class="row">
+        <div class="col s6 m6 l6" style="margin:0">
+          <div id="breadcrumb" style="position:relative; left:31vw; bottom:42px">
+            <ul class="crumbs">
+              <li class="first"><a href="#" style="z-index:8; font-size:1.0vw"><span></span>Choose a flight</a></li>
+              <li><a href="#" class="teal-text" style="z-index:7; font-size:1.0vw">Passengers information</a></li>
+              <li><a href="#" style="z-index:6; font-size:1.0vw">Payment</a></li>
+              <li><a href="#" style="z-index:5; font-size:1.0vw">Confirmation</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+        <div class="container" style="margin-top:170px">
+            <div class="#eeeeee grey lighten-3">
+              
+
+             
+              <div class="row">
+                <div class=margen2>
+                   <p><i class="small material-icons left">perm_identity</i> <h5>Passengers</h5></p>
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container #eeeeee grey lighten-3" id="passengercontainer">
+            
+              <div class="row" style="margin-bottom:0">
+                <div class="col s12 m12 l12">
+                  <p style="margin-left:5em; font-size:18px"> Passenger 1 </p>
+                </div>
+              </div>
+              
+
+              <div class="row" style="margin-bottom:0">
+              
+                  <div class="col s3">
+                      <div class="input-field">
+                        <input paceholder="Name" id="Name" type="text"> 
+
+                        <label for="Name">Name</label> 
+                      </div>  
+                  </div>
+
+                  <div class="col s3">
+                      <div class="input-field">
+                        <input paceholder="Surname" id="Surname" type="text"> 
+
+                        <label for="Surname">Surname</label> 
+                      </div>  
+                  </div>
+
+                  <div class="col s3">
+                    <div class="input-field">
+                      <input placeholder="Birthdate" type="date" class="datepicker">
+                    </div>    
+                  </div>
+
+              </div>
+
+              <div class="row" style="margin-bottom:0">
+
+
+                <div class="col s4">
+                   <div class="input-field grey-text"> 
+                    
+                      <select>
+                       <option value="" disabled selected>Document type</option>
+                       <option value="1">Document</option>
+                       <option value="2">Passport</option>
+                       <label>Select document or passport</label>
+                      </select>  
+
+                   </div> 
+               </div>
+
+               <div class="col s4" style="margin-right:10px">
+                  <div class="input-field">
+                    <input  id="Number" type="text"> 
+                    <label for="Number">Document Number</label> 
+                  </div>
+              </div>
+                  
+                  
+
+              </div> 
+
+           
+
+              <div class="row" style="margin-bottom:0">
+                <div class="col s12 m12 l12">
+                  <p style="margin-left:5em; font-size:18px"> Passenger 1 </p>
+                </div>
+              </div>
+              
+
+              <div class="row" style="margin-bottom:0">
+              
+                  <div class="col s3">
+                      <div class="input-field">
+                        <input paceholder="Name" id="Name" type="text"> 
+
+                        <label for="Name">Name</label> 
+                      </div>  
+                  </div>
+
+                  <div class="col s3">
+                      <div class="input-field">
+                        <input paceholder="Surname" id="Surname" type="text"> 
+
+                        <label for="Name">Surname</label> 
+                      </div>  
+                  </div>
+
+                  <div class="col s3">
+                    <div class="input-field">
+                      <input placeholder="Birthdate" type="date" class="datepicker">
+                    </div>    
+                  </div>
+
+              </div>
+
+              <div class="row" style="margin-bottom:0">
+
+
+                <div class="col s4">
+                   <div class="input-field grey-text"> 
+                    
+                      <select>
+                       <option value="" disabled selected>Document type</option>
+                       <option value="1">Document</option>
+                       <option value="2">Passport</option>
+                       <label>Select document or passport</label>
+                      </select>  
+
+                   </div> 
+               </div>
+
+               <div class="col s4" style="margin-right:10px">
+                  <div class="input-field">
+                    <input  id="Number" type="text"> 
+                    <label for="Number">Document Number</label> 
+                  </div>
+              </div>
+                  
+                  
+
+              </div> 
+
+           
+              <script>
+              createPassengers();
+              </script>
+        </div>
+        
+
+    </body>
+  </html>
