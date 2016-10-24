@@ -150,3 +150,90 @@
     left: 0px;
   }
 
+.letter {
+    font-size: 12px;
+    font-weight: bold;
+    color: #616161;
+  }
+
+  .letterINI {
+    font-size: 20px;
+    font-weight: bold;
+    color: #009688;
+  }
+
+  .origen {
+    background-color: #009688;
+    color: #ffffff;
+    padding-left: 1em;
+    padding-right: 0em;
+  }
+
+  #tableF {
+    padding-right: 0em;
+    padding-left: 0em;  
+    border-top-width: 0.3em;
+    border-left-width: 0.1em; 
+    border-style: solid;
+    border-bottom-width: 0.1em;
+    border-right-width: 0.1em; 
+    border-color: #e0e0e0;
+  }
+
+  #buttonF {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    margin-bottom: 0em;
+    color: #ffffff;
+    background-color: #eeeeee;
+    border-top-width: 0.3em;
+    border-left-width: 0.0em; 
+    border-style: solid;
+    border-bottom-width: 0.0em;
+    border-right-width: 0.1em; 
+    border-color: #e0e0e0;
+  }
+
+   #containerdetails {
+    padding-left: 1em;
+    padding-right: 1em;          
+    background-color: #eeeeee;
+    border-style: solid;
+    border-top-width: 0.0em;
+    border-left-width: 0.0em; 
+    border-bottom-width: 0.1em;
+    border-right-width: 0.1em;
+    border-color: #e0e0e0;
+  }
+
+  #buttondetails {
+    border-top-width: 0.1em;
+    border-left-width: 0.1em; 
+    border-bottom-width: 0.1em;
+    border-right-width: 0.1em;
+    border-color: #BDBDBD;
+    border-style: solid;
+
+  }
+
+  .btnContinue {
+    margin-top: 1em;
+    margin-left: 17%;
+  }
+
+  .margen2{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    margin-left: 6em;
+
+  }
+
+ .input-field{
+   margin-bottom: 1em;
+   margin-top: 1em;
+   margin-left: 6em;
+   margin-right: 0em;
+
+  }
