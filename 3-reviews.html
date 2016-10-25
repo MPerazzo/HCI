@@ -8,9 +8,15 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="css/materialize.min.css">
       <link rel="stylesheet" href="css/micss.css">
+      <link rel="stylesheet" href="css/reviews.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
 
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="js/materialize.min.js"></script>
+      <script src="js/reviews.js"></script>
+      <script src="js/typeaheadJS.js"></script>
+      <script src="js/lodash.js"></script>
+      <script src="js/bloodhound.js"></script>
 
    </head>
    <body style="margin:0; margin-bottom:30px; padding=0">
@@ -79,8 +85,10 @@
 	        <div class="row center">
 	            <form class="col l10 center offset-l1" style="padding:0" id="search1">             
                	  <div class="input-field col s3 m3 l3 offset-l1" style="margin-top:5vh;">
-                     <input id="airlane" type="text" placeholder="Write the airline alias here" class="autocomplete">
-                     <label for="airlane" class="black-text" style="font-size:16px">Airline</label>
+               	  	<div id="bloodhound">
+                    	<input id='airline' class="typeahead" type="text" placeholder="write the airline alias here">
+                     	<label for="airlane" class="black-text" style="font-size:16px">Airline</label>
+                  	</div>
                   </div>
                   <div class="input-field col s3 m3 l3 offset-s1 offset-l1" style="margin-top:5vh">
                      <input id="flightNumber" type="text" placeholder="Write the flight number here" class="autocomplete">
@@ -89,7 +97,7 @@
                   <div class="col s3 m3 l3 valign" style="position:relative; bottom:10px;">
                      <br/>
                      	<br/>
-                           <a class="btn waves-effect waves-light teal-lighten-2 right" type="submit" name="action">Search</a>
+                           <a id='search-reviews' class="search-butto btn waves-effect waves-light teal-lighten-2 right" type="submit" name="action">Search</a>
                      <br/>
                   </div>              
 	            </form>

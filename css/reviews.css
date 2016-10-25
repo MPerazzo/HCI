@@ -1,0 +1,7 @@
+.search-button {
+	cursor: pointer;
+}
+
+.search-button:active {
+	opacity: .5;
+}
