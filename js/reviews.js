@@ -66,20 +66,50 @@ $(document).ready(function(){
 		'</div>'
 	};
 
+
+  var errorTemplate = function () {
+    return '<div class="container">'+
+    '<div class="row"  >'+
+    ' <div class="col s8 m8 l8  grey lighten-3 revCont" >'+
+    '<p style="color: #FF0000; font-size: 18px">No reviews were found for this airline / flight number</p>'
+    ' </div>'+
+    '</div>'+
+    '</div>'
+  };
+
+  var noAirError = function () {
+    return '<div class="container">'+
+    '<div class="row"  >'+
+    ' <div class="col s8 m8 l8  grey lighten-3 revCont" >'+
+    '<p style="color: #FF0000; font-size: 18px">The airline you entered does not exist</p>'
+    ' </div>'+
+    '</div>'+
+    '</div>'
+  };
+
 	var gerReviews = function (param, data) {
 		var len = data.reviews.length;
 		var container = $('#reviewsContainer');
-		for(i=0; i<len; i++) {
-			container.append(reviewTemplate(data.reviews[i]));
-		};
+    if(len > 0) {
+  		for(i=0; i<len; i++) {
+  			container.append(reviewTemplate(data.reviews[i]));
+  		};
+    } else {
+      container.append(errorTemplate());
+    }
  	 };
 
   $('#search-reviews').click(function(){
-    var airlineID = _.find(completeAirlines, function(o) { return o.name === $('#airline')[0].value; }).id;
+    var myNode = document.getElementById("reviewsContainer");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
+    var airlineID = _.find(completeAirlines, function(o) { return o.name === $('#airline')[0].value; });
     if(airlineID) {
+      airlineID = airlineID.id;
     	getJSON('http://hci.it.itba.edu.ar/v1/api/review.groovy?method=getairlinereviews&airline_id='+airlineID+'&flight_number='+$('#flightNumber')[0].value+'&page_size=10', gerReviews);
     } else {
-    	//ERROR NO SE INGRESO BIEN LA AEROLINEA
+      $('#reviewsContainer').append(noAirError());
     }
 
 
