@@ -68,9 +68,6 @@ $(document).ready(function(){
 
 	var gerReviews = function (param, data) {
 		var len = data.reviews.length;
-		if (len > 10) {
-			len = 10;
-		}
 		var container = $('#reviewsContainer');
 		for(i=0; i<len; i++) {
 			container.append(reviewTemplate(data.reviews[i]));
@@ -80,7 +77,7 @@ $(document).ready(function(){
   $('#search-reviews').click(function(){
     var airlineID = _.find(completeAirlines, function(o) { return o.name === $('#airline')[0].value; }).id;
     if(airlineID) {
-    	getJSON('http://hci.it.itba.edu.ar/v1/api/review.groovy?method=getairlinereviews&airline_id='+airlineID+'&flight_number='+$('#flightNumber')[0].value, gerReviews);
+    	getJSON('http://hci.it.itba.edu.ar/v1/api/review.groovy?method=getairlinereviews&airline_id='+airlineID+'&flight_number='+$('#flightNumber')[0].value+'&page_size=10', gerReviews);
     } else {
     	//ERROR NO SE INGRESO BIEN LA AEROLINEA
     }
