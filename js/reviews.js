@@ -45,8 +45,36 @@ $(document).ready(function(){
   };
   getJSON('http://hci.it.itba.edu.ar/v1/api/misc.groovy?method=getairlines', getAirlines);
 
+  var reviewTemplate = function (review) {
+  	return '<div class="container">'+
+		'<div class="row"  >'+
+		'	<div class="col s8 m8 l8  grey lighten-3 revCont" >'+
+		'	<div class="col s3 m3 l3">'+
+		'		<p>Airline:</p>'+
+		'		<p>Flight number:</p>'+
+		'		<p>general opinion:</p>'+
+		'		<p>comment:</p>'+
+		'	</div>'+
+		'	<div class="col s5 m5 l5">'+
+		'		<p>'+review.flight.airline.id+'</p>'+
+		'		<p>'+review.flight.number+'</p>'+
+		'		<p>'+review.rating.overall+'</p>'+
+		'		<p>'+review.comments+'</p>'+
+		'	</div>'+
+		'	</div>'+
+		'</div>'+
+		'</div>'
+	};
+
 	var gerReviews = function (param, data) {
-		debugger
+		var len = data.reviews.length;
+		if (len > 10) {
+			len = 10;
+		}
+		var container = $('#reviewsContainer');
+		for(i=0; i<len; i++) {
+			container.append(reviewTemplate(data.reviews[i]));
+		};
  	 };
 
   $('#search-reviews').click(function(){
