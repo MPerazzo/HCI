@@ -109,9 +109,11 @@
 	        <div class="row" id="search1" style="margin-bottom:30px; height:690px">
 	            <form class="col s12" style="margin-top:3.0vh; margin-bottom:30px">
 	               <div class="row" style="margin-bottom:0">
-	               	  <div class="input-field col s6 m4 l3">
-	                     <input id="airlane" type="text" placeholder="Write the airline alias here" class="validate">
-	                     <label for="airlane" class="black-text" style="font-size:16px">Airline</label>
+	               	  <div class="input-field col s6 m4 l3">  
+	               	  	<div id="bloodhound">
+	                    	<input id='airline' class="typeahead" type="text" placeholder="write the airline alias here">
+	                     	<label for="airlane" class="black-text" style="font-size:16px">Airline</label>
+	                  	</div>
 	                  </div>
 	                  <div class="input-field col s6 m4 l3 offset-s1 offset-l1">
 	                     <input id="flightNumber" type="text" placeholder="Write the flight number here" class="validate">
@@ -126,53 +128,107 @@
 	               <div class="row" style="margin-top:2.5vh">
 	               		<div class="col s6 m4 l3">
 		               		<text class="black-text">Friendliness</text>
-		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               		<rating class="rating" style="position:absolute; left:40vw">
+		               		<span>&#9734</span>
+		               		<span>&#9734</span>
+		               		<span>&#9734</span>
+		               		<span>&#9734</span>
+		               		<span>&#9734</span>
+		               		<span>&#9734</span>
+		               		<span>&#9734</span>
+		               		<span>&#9734</span>
+		               		<span>&#9734</span>
+		               		<span>&#9734</span>
+		               	</rating>
 		               	</div>
 	               </div>
  				   <div class="row" style="margin-top:2.5vh">
 	               		<div class="col s6 m4 l3">
 		               		<text class="black-text">Food</text>
-		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               		<rating class="rating" style="position:absolute; left:40vw">
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+		               	</rating>
 		               	</div>
 	               </div>
 
 	               <div class="row" style="margin-top:2.5vh">
 	               		<div class="col s6 m4 l3">
 		               		<text class="black-text">Punctuality</text>
-		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               		<rating class="rating" style="position:absolute; left:40vw">
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               	</rating>
 		               	</div>
 	               </div>
 
 	               <div class="row" style="margin-top:2.5vh">
 	               		<div class="col s6 m4 l3">
 		               		<text class="black-text">Frequent flyer program</text>
-		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               		<rating class="rating" style="position:absolute; left:40vw">
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               	</rating>
 		               	</div>
 	               </div>
 
 	               <div class="row" style="margin-top:2.5vh">
 	               		<div class="col s6 m4 l3">
 		               		<text class="black-text">Confort</text>
-		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               		<rating class="rating" style="position:absolute; left:40vw">
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               	</rating>
 		               	</div>
 	               </div>
 
 	               <div class="row" style="margin-top:2.5vh">
 	               		<div class="col s6 m4 l3">
 		               		<text class="black-text">Price-Quality relation</text>
-		               		<rating class="rating" style="position:absolute; left:40vw"><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span><span>&#9734</span>
-		               		<span>&#9734</span><span>&#9734</span></rating></rating>
+		               		<rating class="rating" style="position:absolute; left:40vw">
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               		<span>&#9734</span>
+			               	</rating>
 		               	</div>
 	               </div>
 
